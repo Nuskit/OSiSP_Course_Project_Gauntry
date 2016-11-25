@@ -1,31 +1,46 @@
 #include "stdafx.h"
 #include "DirectX.h"
+#include "GameLoopState.h"
+#include "GameLoopInitialize.h"
 
-#define MS_PER_UPDATE 200
+#define MS_PER_UPDATE 100
+
+DirectX::DirectX():gameLoop(nullptr)
+{
+}
+
+DirectX::~DirectX()
+{
+	if (gameLoop)
+		gameLoop->exit();
+	delete gameLoop;
+}
 
 void DirectX::initGameLoop()
 {
+	gameLoop = new GameLoopInitialize();
+	gameLoop->enter();
 	previous = GetCurrentTime();
-	lag = 0.;
+	lag = 0;
 }
 
 void DirectX::stepGameLoop()
 {
-	double current = GetCurrentTime();
-	double elapsed = current - previous;
+	DWORD current = GetCurrentTime();
+	DWORD elapsed = current - previous;
 	previous = current;
 	lag += elapsed;
 
-	processInput();
+	gameLoop->processInput();
 	updateGame();
-	render(lag / MS_PER_UPDATE);
+	gameLoop->render(static_cast<double>(lag) / MS_PER_UPDATE);
 }
 
 void DirectX::updateGame()
 {
 	while (lag >= MS_PER_UPDATE)
 	{
-		update();
+		gameLoop->update();
 		lag -= MS_PER_UPDATE;
 	}
 }

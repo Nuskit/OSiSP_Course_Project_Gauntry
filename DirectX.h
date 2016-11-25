@@ -1,20 +1,21 @@
 #pragma once
 #include "stdafx.h"
 
+class GameLoopState;
 class DirectX
 {
 public:
-	virtual const HRESULT init(HWND hWnd) = 0;
+	DirectX();
+	virtual const HRESULT init() = 0;
 	virtual void clearUp() = 0;
-	virtual ~DirectX() {};
+	virtual void setupMatrixPerspective(const D3DXMATRIX& matrix) = 0;
+
+	virtual ~DirectX();
 	void initGameLoop();
 	void stepGameLoop();
-protected:
-	virtual void processInput() = 0;
-	virtual void update() = 0;
-	virtual void render(double lagTime) = 0;
 private:
 	void updateGame();
-	double previous;
-	double lag;
+	GameLoopState *gameLoop;
+	DWORD previous;
+	DWORD lag;
 };

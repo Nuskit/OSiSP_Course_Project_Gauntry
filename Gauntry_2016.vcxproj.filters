@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="MainApplication.cpp" />
-    <ClCompile Include="d3dUtility.cpp">
-      <Filter>DirectX</Filter>
-    </ClCompile>
     <ClCompile Include="DirectX.cpp">
       <Filter>Services\Interfaces</Filter>
     </ClCompile>
@@ -20,11 +16,23 @@
     <ClCompile Include="DirectX_9.cpp">
       <Filter>DirectX\v_9</Filter>
     </ClCompile>
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="d3dUtility.cpp">
+      <Filter>DirectX\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoopInitialize.cpp">
+      <Filter>GameLoopStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainApplication.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="MainApplication.h" />
     <ClInclude Include="DirectX.h">
       <Filter>Services\Interfaces</Filter>
     </ClInclude>
@@ -43,9 +51,23 @@
     <ClInclude Include="DirectX_9.h">
       <Filter>DirectX\v_9</Filter>
     </ClInclude>
-    <ClInclude Include="MainWindow.h" />
     <ClInclude Include="d3dUtility.h">
       <Filter>DirectX\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoopState.h">
+      <Filter>GameLoopStates</Filter>
+    </ClInclude>
+    <ClInclude Include="MainApplication.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoopInitialize.h">
+      <Filter>GameLoopStates</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowInfromation.h">
+      <Filter>Services\Interfaces</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -69,6 +91,12 @@
     </Filter>
     <Filter Include="DirectX\Utility">
       <UniqueIdentifier>{2688fc14-6e7b-4c2e-aed6-4d56c4369a28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameLoopStates">
+      <UniqueIdentifier>{c477ff1e-c4c0-4582-84f7-c9bbac9c8a0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Main">
+      <UniqueIdentifier>{633ba0a9-d235-4bf2-91e1-5042653e07fa}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

@@ -1,5 +1,6 @@
 #pragma once
 #include "stdafx.h"
+#include "WindowInfromation.h"
 
 //class Create_D3D9
 //{
@@ -9,14 +10,16 @@
 //	static VOID SetupMatrices(MainWindow &);
 //};
 
-class MainWindow
+class MainWindow: public WindowInformation
 {
 public:
 	MainWindow(DWORD width, DWORD height);
 	~MainWindow();
-	HWND getHWND();
 	bool workWindowLoop();
 	void initWindowLoop();
+	virtual HWND getHWND() override;
+	virtual const DWORD getWidth() override;
+	virtual const DWORD getHeight() override;
 private:
 	static LRESULT WINAPI MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 	HWND createWindowObject();
@@ -26,7 +29,7 @@ private:
 	DWORD windowHeight;
 	HWND hWnd;
 	WNDCLASSEX wc;
-//
+	//
 //	ID3DXFont* MyText;
 //
 //

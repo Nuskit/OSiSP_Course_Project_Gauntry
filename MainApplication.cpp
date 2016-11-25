@@ -4,14 +4,18 @@
 #include "ServiceManager.h"
 #include "DirectX.h"
 
+#define MAX_FRAMERATE 60
+#define FRAMERATE_TIME 1000
+
 MainApplication::MainApplication(DWORD width, DWORD height) : mainWindow_(new MainWindow(width,height))
 {
+	ServiceManager::provide(mainWindow_);
 }
 
 MainApplication::~MainApplication()
 {
-	delete mainWindow_;
 	ServiceManager::getDirectX().clearUp();
+	delete mainWindow_;
 }
 
 HRESULT MainApplication::initApplication()
@@ -25,14 +29,25 @@ HRESULT MainApplication::initApplication()
 void MainApplication::runMainLoop()
 {
 	mainWindow_->initWindowLoop();
+	int frameRate = 0;
+	DWORD startTime = GetCurrentTime();
 	ServiceManager::getDirectX().initGameLoop();
 	while (mainWindow_->workWindowLoop())
 	{
 		ServiceManager::getDirectX().stepGameLoop();
+		if (++frameRate == MAX_FRAMERATE)
+		{
+			DWORD lastTime = GetCurrentTime();
+			DWORD elapsed = lastTime - startTime;
+			frameRate = 0;
+			if (elapsed < FRAMERATE_TIME)
+				Sleep(FRAMERATE_TIME - elapsed);
+			startTime = lastTime;
+		}
 	}
 }
 
 HRESULT MainApplication::initDirectX()
 {
-	return ServiceManager::getDirectX().init(mainWindow_->getHWND());
+	return ServiceManager::getDirectX().init();
 }

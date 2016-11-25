@@ -1,6 +1,3 @@
-//-----------------------------------------------------------------------------
-//All rights reserved.
-//-----------------------------------------------------------------------------
 #include "stdafx.h"
 #include "MainWindow.h"
 #include "LoadStringFromResource.h"
@@ -52,14 +49,24 @@ HWND MainWindow::createWindowObject()
 		WS_OVERLAPPEDWINDOW, 0, 0, windowWidth, windowHeight, NULL, NULL, wc.hInstance, NULL);
 }
 
-MainWindow::MainWindow(DWORD width, DWORD height) : windowWidth(width>0 ? width : DEFAULT_WINDOW_WIDTH), windowHeight(height>0 ? height : DEFAULT_WINDOW_HEIGHT),
-hWnd(createWindowObject())
+const DWORD MainWindow::getWidth()
 {
+	return windowWidth;
+}
+
+const DWORD MainWindow::getHeight()
+{
+	return windowHeight;
 }
 
 HWND MainWindow::getHWND()
 {
 	return hWnd;
+}
+
+MainWindow::MainWindow(DWORD width, DWORD height) : windowWidth(width>0 ? width : DEFAULT_WINDOW_WIDTH), windowHeight(height>0 ? height : DEFAULT_WINDOW_HEIGHT),
+hWnd(createWindowObject())
+{
 }
 
 bool MainWindow::workWindowLoop()

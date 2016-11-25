@@ -5,16 +5,12 @@
 class DirectX_9 :public DirectX
 {
 public:
-	virtual const HRESULT init(HWND hWnd) override;
-	virtual void clearUp() override;
 	DirectX_9();
-protected:
-	virtual void processInput() override;
-	virtual void update() override;
-	virtual void render(double lagTime) override;
+	virtual void clearUp() override;
+	virtual const HRESULT init() override;
+	virtual void setupMatrixPerspective(const D3DXMATRIX& matrix) override;
 private:
-	const HRESULT createDevice(HWND hWnd);
-
+	const HRESULT createDevice();
 
 	LPDIRECT3D9             pGraphicD3D; // Used to create the D3DDevice
 	LPDIRECT3DDEVICE9       pGraphicD3DDevice; // Our rendering device

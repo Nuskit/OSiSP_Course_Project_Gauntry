@@ -1,21 +1,29 @@
 #include "stdafx.h"
 #include "DirectX_9.h"
 #include "d3dUtility.h"
+#include "ServiceManager.h"
+#include "WindowInfromation.h"
 
 DirectX_9::DirectX_9():pGraphicD3D(NULL), pGraphicD3DDevice(NULL), pGraphicVB(NULL)
 {
 }
 
-const HRESULT DirectX_9::init(HWND hWnd)
+const HRESULT DirectX_9::init()
 {
 	// Create the D3D object.
 	if (NULL == (pGraphicD3D = Direct3DCreate9(D3D_SDK_VERSION)))
 		return E_FAIL;
 
-	return createDevice(hWnd);
+	return createDevice();
 }
 
-const HRESULT DirectX_9::createDevice(HWND hWnd)
+void DirectX_9::setupMatrixPerspective(const D3DXMATRIX& matrix)
+{
+	pGraphicD3DDevice->SetTransform(D3DTS_PROJECTION, &matrix);
+	pGraphicD3DDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
+}
+
+const HRESULT DirectX_9::createDevice()
 {
 	// Set up the structure used to create the D3DDevice
 	D3DPRESENT_PARAMETERS d3dpp;
@@ -50,7 +58,7 @@ const HRESULT DirectX_9::createDevice(HWND hWnd)
 		vp = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
 	}
 
-	if (FAILED(pGraphicD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, hWnd,
+	if (FAILED(pGraphicD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, ServiceManager::getWindowInformation().getHWND(),
 		vp, &d3dpp, &pGraphicD3DDevice)))
 	{
 		return E_FAIL;
@@ -75,18 +83,6 @@ const HRESULT DirectX_9::createDevice(HWND hWnd)
 	pGraphicD3DDevice->SetRenderState(D3DRS_AMBIENT, 0x0000000);
 
 	return S_OK;
-}
-
-void DirectX_9::processInput()
-{
-}
-
-void DirectX_9::update()
-{
-}
-
-void DirectX_9::render(double lagTime)
-{
 }
 
 void DirectX_9::clearUp()

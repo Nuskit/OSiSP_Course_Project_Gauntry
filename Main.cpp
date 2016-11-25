@@ -37,30 +37,6 @@ void InitServiceManager()
 //	ServiceManager::provide(new DirectX_9());
 //}
 
-
-////-----------------------------------------------------------------------------
-//// Name: SetupMatrices()
-//// Desc: Sets up the world, view, and projection transform matrices.
-////-----------------------------------------------------------------------------
-//VOID Create_D3D9::SetupMatrices(MainWindow &Game_Window)
-//{
-//	// For the projection matrix, we set up a perspective transform (which
-//	// transforms geometry from 3D view space to 2D viewport space, with
-//	// a perspective divide making objects smaller in the distance). To build
-//	// a perpsective transform, we need the field of view (1/4 pi is common),
-//	// the aspect ratio, and the near and far clipping planes (which define at
-//	// what distances geometry should be no longer be rendered).
-//	D3DXMATRIXA16 matProj;
-//	D3DXMatrixPerspectiveFovLH(&matProj, D3DX_PI / 4, Game_Window.windowWidth / Game_Window.windowHeight, 1.0f, 30000.0f);
-//	g_pd3dDevice->SetTransform(D3DTS_PROJECTION, &matProj);
-//
-//
-//	g_pd3dDevice->SetRenderState(D3DRS_CULLMODE, D3DCULL_CW);
-//}
-
-
-
-//
 ////-----------------------------------------------------------------------------
 //// Name: InitVB()
 //// Desc: Creates a vertex buffer and fills it with our vertices. The vertex
