@@ -8,7 +8,7 @@ class LoadStringFromResource
 {
 public:
 	LoadStringFromResource(unsigned int idResource);
-	operator const TCHAR*();
+	operator LPCWSTR() const;
 private:
-	static TCHAR buffer[LOAD_STRING_BUF_SIZE];
+	TCHAR buffer[LOAD_STRING_BUF_SIZE];
 };

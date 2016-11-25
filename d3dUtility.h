@@ -1,7 +1,5 @@
-#ifndef __d3dUtilityH__
-#define __d3dUtilityH__
-
-#include <d3dx9.h>
+#pragma once
+#include "stdafx.h"
 #include <string>
 #include <limits>
 
@@ -100,8 +98,8 @@ namespace d3d
 	// Constants
 	//
 
-	#define INFINITY  FLT_MAX
-	#define EPSILON   0.001f
+	#define FLOAT_INFINITY  FLT_MAX
+	#define FLOAT_EPSILON   0.001f
 
 	struct Vertex
 	{
@@ -146,5 +144,3 @@ namespace d3d
 
 	float Lerp(float a, float b, float t);
 }
-
-#endif // __d3dUtilityH__

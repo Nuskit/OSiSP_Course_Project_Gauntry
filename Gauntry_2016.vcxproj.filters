@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="MainApplication.cpp" />
+    <ClCompile Include="d3dUtility.cpp">
+      <Filter>DirectX</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX.cpp">
+      <Filter>Services\Interfaces</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceManager.cpp">
+      <Filter>Services</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="LoadStringFromResource.cpp">
+      <Filter>Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="DirectX_9.cpp">
+      <Filter>DirectX\v_9</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainApplication.h" />
+    <ClInclude Include="DirectX.h">
+      <Filter>Services\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceManager.h">
+      <Filter>Services</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="LoadStringFromResource.h">
+      <Filter>Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="DirectX_9.h">
+      <Filter>DirectX\v_9</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="d3dUtility.h">
+      <Filter>DirectX\Utility</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Infrastructure">
+      <UniqueIdentifier>{f1bfc7c7-a822-429f-9ad7-b65ebf1ebf8a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX">
+      <UniqueIdentifier>{bd9e88aa-e89a-4854-a83f-984489109ff1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services">
+      <UniqueIdentifier>{05d3aa9e-e836-458e-a1da-92123d95287f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\Interfaces">
+      <UniqueIdentifier>{57057405-d1d9-478e-94b6-7b45a017d139}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{4c687975-864f-4474-a1be-7a0c176a4c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\v_9">
+      <UniqueIdentifier>{7cc9eb77-82a4-4891-9e75-ac570b03bcd9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="DirectX\Utility">
+      <UniqueIdentifier>{2688fc14-6e7b-4c2e-aed6-4d56c4369a28}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Resource.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="directx.ico">
+      <Filter>Resources</Filter>
+    </None>
+  </ItemGroup>
+</Project>

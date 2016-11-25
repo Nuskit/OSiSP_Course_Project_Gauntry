@@ -3,10 +3,11 @@
 
 LoadStringFromResource::LoadStringFromResource(unsigned int idResource)
 {
-	LoadString(, idResource, buffer, LOAD_STRING_BUF_SIZE);
+	static HINSTANCE hInstance = GetModuleHandle(NULL);
+	LoadString(hInstance, idResource, buffer, LOAD_STRING_BUF_SIZE);
 }
 
-LoadStringFromResource::operator const TCHAR*()
+LoadStringFromResource::operator LPCWSTR() const
 {
 	return buffer;
 }

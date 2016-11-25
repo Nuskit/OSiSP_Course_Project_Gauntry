@@ -4,5 +4,7 @@
 
 class IServiceMainWindow
 {
-	virtual HINSTANCE getIntance() = 0;
+public:
+	virtual HWND getHWND() = 0;
+	virtual void setHWND(HWND hwnd) = 0;
 };
