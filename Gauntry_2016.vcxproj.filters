@@ -4,9 +4,6 @@
     <ClCompile Include="DirectX.cpp">
       <Filter>Services\Interfaces</Filter>
     </ClCompile>
-    <ClCompile Include="ServiceManager.cpp">
-      <Filter>Services</Filter>
-    </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Infrastructure</Filter>
     </ClCompile>
@@ -20,7 +17,7 @@
       <Filter>DirectX\Utility</Filter>
     </ClCompile>
     <ClCompile Include="GameLoopInitialize.cpp">
-      <Filter>GameLoopStates</Filter>
+      <Filter>States\GameLoopStates</Filter>
     </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Main</Filter>
@@ -31,13 +28,28 @@
     <ClCompile Include="MainWindow.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="UILoopInitialize.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
+    <ClCompile Include="ServiceManager.cpp">
+      <Filter>Services\ServiceManager</Filter>
+    </ClCompile>
+    <ClCompile Include="UILoopNull.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
+    <ClCompile Include="UILoopMainMenu.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
+    <ClCompile Include="UILibrary.cpp">
+      <Filter>Infrastructure</Filter>
+    </ClCompile>
+    <ClCompile Include="UILoopOptions.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
       <Filter>Services\Interfaces</Filter>
-    </ClInclude>
-    <ClInclude Include="ServiceManager.h">
-      <Filter>Services</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Resources</Filter>
@@ -55,7 +67,7 @@
       <Filter>DirectX\Utility</Filter>
     </ClInclude>
     <ClInclude Include="GameLoopState.h">
-      <Filter>GameLoopStates</Filter>
+      <Filter>States\GameLoopStates</Filter>
     </ClInclude>
     <ClInclude Include="MainApplication.h">
       <Filter>Main</Filter>
@@ -64,10 +76,37 @@
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="GameLoopInitialize.h">
-      <Filter>GameLoopStates</Filter>
+      <Filter>States\GameLoopStates</Filter>
     </ClInclude>
     <ClInclude Include="WindowInfromation.h">
       <Filter>Services\Interfaces</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopState.h">
+      <Filter>States\UIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopInitialize.h">
+      <Filter>States\UIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="ServiceManager.h">
+      <Filter>Services\ServiceManager</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopNull.h">
+      <Filter>States\UIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Defines.h">
+      <Filter>Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopMainMenu.h">
+      <Filter>States\UIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="UILibrary.h">
+      <Filter>Infrastructure</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopOptions.h">
+      <Filter>States\UIStates</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -92,11 +131,20 @@
     <Filter Include="DirectX\Utility">
       <UniqueIdentifier>{2688fc14-6e7b-4c2e-aed6-4d56c4369a28}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameLoopStates">
-      <UniqueIdentifier>{c477ff1e-c4c0-4582-84f7-c9bbac9c8a0a}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Main">
       <UniqueIdentifier>{633ba0a9-d235-4bf2-91e1-5042653e07fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States">
+      <UniqueIdentifier>{dd5fe4d4-a531-4dad-82e3-05e4c6934423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\GameLoopStates">
+      <UniqueIdentifier>{c477ff1e-c4c0-4582-84f7-c9bbac9c8a0a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\UIStates">
+      <UniqueIdentifier>{db632f46-b42e-4d75-b0eb-c5fe72376a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Services\ServiceManager">
+      <UniqueIdentifier>{ed9b1119-e9f8-4cc4-86eb-460aa71a3c12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

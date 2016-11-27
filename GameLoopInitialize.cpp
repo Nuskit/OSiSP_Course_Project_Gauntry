@@ -26,7 +26,7 @@ void GameLoopInitialize::enter()
 	D3DXMATRIX matrixProjection;
 	D3DXMatrixPerspectiveFovLH(&matrixProjection, VISION_ANGLE, calculateAspect(), CLIPPING_NEAR, CLIPPING_FAR);
 
-	ServiceManager::getDirectX().setupMatrixPerspective(matrixProjection);
+	getServiceManager().getDirectX().setupMatrixPerspective(matrixProjection);
 }
 
 void GameLoopInitialize::exit()
@@ -35,6 +35,6 @@ void GameLoopInitialize::exit()
 
 const FLOAT GameLoopInitialize::calculateAspect()
 {
-	WindowInformation& windowInfromation = ServiceManager::getWindowInformation();
+	WindowInformation& windowInfromation = getServiceManager().getWindowInformation();
 	return static_cast<FLOAT>(windowInfromation.getWidth()) / windowInfromation.getHeight();
 }

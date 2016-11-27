@@ -1,9 +1,20 @@
 #include "stdafx.h"
 #include "ServiceManager.h"
+#include "UILoopNull.h"
 #include <stdexcept>
 
-DirectX* ServiceManager::directX_ = nullptr;
-WindowInformation* ServiceManager::windowInformation_ = nullptr;
+UILoopNull ServiceManager::uiStateNull;
+
+ServiceManager& getServiceManager()
+{
+	return ServiceManager::getInstance();
+}
+
+ServiceManager& ServiceManager::getInstance()
+{
+	static ServiceManager serviceManager;
+	return serviceManager;
+}
 
 void ServiceManager::provide(DirectX * directX)
 {
@@ -15,16 +26,29 @@ void ServiceManager::provide(WindowInformation * windowInformation)
 	windowInformation_ = windowInformation;
 }
 
+void ServiceManager::provide(UILoopState * uiState)
+{
+	uiState_ = (uiState == nullptr) ? &uiStateNull : uiState;
+}
+
 DirectX& ServiceManager::getDirectX()
 {
-	if (directX_ == NULL)
-		throw std::runtime_error("Don't found directX");
+	assert(directX_ != nullptr);
 	return *directX_;
 }
 
 WindowInformation& ServiceManager::getWindowInformation()
 {
-	if (windowInformation_ == NULL)
-		throw std::runtime_error("Don't found windowInformation");
+	assert(windowInformation_ != nullptr);
 	return *windowInformation_;
+}
+
+UILoopState& ServiceManager::getUIState()
+{
+	assert(uiState_ != nullptr);
+	return *uiState_;
+}
+
+ServiceManager::ServiceManager():directX_(nullptr), windowInformation_(nullptr), uiState_(&uiStateNull)
+{
 }

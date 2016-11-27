@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "MainWindow.h"
 #include "LoadStringFromResource.h"
+#include "UILoopInitialize.h"
+#include "ServiceManager.h"
 
 enum
 {
@@ -21,17 +23,16 @@ LRESULT WINAPI MainWindow::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lP
 		PostQuitMessage(0);
 		break;
 	}
-	case WM_KEYDOWN:
+	default:
 	{
-		switch (wParam)
-		{
-		case VK_ESCAPE:
-			SendMessage(hWnd, WM_CLOSE, 0, 0);
-			break;
-		}
+		UILoopState::MsgProcParam msgProc{ hWnd, msg, wParam,lParam };
+		return getServiceManager().getUIState().MsgProc(msgProc)
+			? msgProc.result
+			: DefWindowProc(hWnd, msg, wParam, lParam);
+		break;
 	}
 	}
-	return DefWindowProc(hWnd, msg, wParam, lParam);
+	return 0;
 }
 
 HWND MainWindow::createWindowObject()
@@ -49,6 +50,16 @@ HWND MainWindow::createWindowObject()
 		WS_OVERLAPPEDWINDOW, 0, 0, windowWidth, windowHeight, NULL, NULL, wc.hInstance, NULL);
 }
 
+void MainWindow::changeState(UILoopState * uiState)
+{
+	assert(uiState != nullptr);
+	uiState_->exit();
+	uiState->enter();
+	getServiceManager().provide(uiState);
+	delete uiState_;
+	uiState_ = uiState;
+}
+
 const DWORD MainWindow::getWidth()
 {
 	return windowWidth;
@@ -64,16 +75,13 @@ HWND MainWindow::getHWND()
 	return hWnd;
 }
 
-MainWindow::MainWindow(DWORD width, DWORD height) : windowWidth(width>0 ? width : DEFAULT_WINDOW_WIDTH), windowHeight(height>0 ? height : DEFAULT_WINDOW_HEIGHT),
-hWnd(createWindowObject())
+MainWindow::MainWindow(DWORD width, DWORD height) :windowWidth(width > 0 ? width : DEFAULT_WINDOW_WIDTH),
+	windowHeight(height > 0 ? height : DEFAULT_WINDOW_HEIGHT), hWnd(createWindowObject())
 {
 }
 
 bool MainWindow::workWindowLoop()
 {
-	//if (SUCCEEDED(Game_Window.Initialization_static_object()))
-
-	//Create_D3D9::SetupMatrices(Game_Window);
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
 	while (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))
@@ -88,6 +96,10 @@ bool MainWindow::workWindowLoop()
 
 void MainWindow::initWindowLoop()
 {
+	uiState_ = new UILoopStateInitialize();
+	getServiceManager().provide(uiState_);
+	uiState_->enter();
+
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 	UpdateWindow(hWnd);
 }

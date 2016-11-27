@@ -58,7 +58,7 @@ const HRESULT DirectX_9::createDevice()
 		vp = D3DCREATE_SOFTWARE_VERTEXPROCESSING;
 	}
 
-	if (FAILED(pGraphicD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, ServiceManager::getWindowInformation().getHWND(),
+	if (FAILED(pGraphicD3D->CreateDevice(D3DADAPTER_DEFAULT, D3DDEVTYPE_HAL, getServiceManager().getWindowInformation().getHWND(),
 		vp, &d3dpp, &pGraphicD3DDevice)))
 	{
 		return E_FAIL;

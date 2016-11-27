@@ -1,0 +1,4 @@
+#pragma once
+
+#define TIMER_INITIALIZE_ID 100
+#define TIMER_INITIALIZE_TIMEOUT 500

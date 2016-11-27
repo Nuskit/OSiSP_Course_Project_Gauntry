@@ -26,6 +26,7 @@ void DirectX::initGameLoop()
 
 void DirectX::stepGameLoop()
 {
+	assert(gameLoop != nullptr);
 	DWORD current = GetCurrentTime();
 	DWORD elapsed = current - previous;
 	previous = current;

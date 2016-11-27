@@ -20,11 +20,10 @@ public:
 	virtual HWND getHWND() override;
 	virtual const DWORD getWidth() override;
 	virtual const DWORD getHeight() override;
+	virtual void changeState(UILoopState * uiState) override;
 private:
 	static LRESULT WINAPI MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
 	HWND createWindowObject();
-//	ObjectFromX *Static_Objects;
-
 	DWORD windowWidth;
 	DWORD windowHeight;
 	HWND hWnd;

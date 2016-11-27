@@ -17,7 +17,7 @@ INT WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, INT)
 
 void InitServiceManager()
 {
-	ServiceManager::provide(new DirectX_9());
+	getServiceManager().provide(new DirectX_9());
 }
 
 //void InitServiceManager();
@@ -34,7 +34,7 @@ void InitServiceManager()
 //
 //void InitServiceManager()
 //{
-//	ServiceManager::provide(new DirectX_9());
+//	getServiceManager().provide(new DirectX_9());
 //}
 
 ////-----------------------------------------------------------------------------

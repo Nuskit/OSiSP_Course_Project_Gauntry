@@ -392,11 +392,18 @@
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="ServiceManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="UILibrary.cpp" />
+    <ClCompile Include="UILoopInitialize.cpp" />
+    <ClCompile Include="UILoopMainMenu.cpp" />
+    <ClCompile Include="UILoopNull.cpp" />
+    <ClCompile Include="UILoopOptions.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseState.h" />
+    <ClInclude Include="Defines.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="DirectX_9.h" />
     <ClInclude Include="d3dUtility.h" />
@@ -408,6 +415,12 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="ServiceManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UILibrary.h" />
+    <ClInclude Include="UILoopInitialize.h" />
+    <ClInclude Include="UILoopMainMenu.h" />
+    <ClInclude Include="UILoopNull.h" />
+    <ClInclude Include="UILoopOptions.h" />
+    <ClInclude Include="UILoopState.h" />
     <ClInclude Include="WindowInfromation.h" />
   </ItemGroup>
   <ItemGroup>

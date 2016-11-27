@@ -9,12 +9,12 @@
 
 MainApplication::MainApplication(DWORD width, DWORD height) : mainWindow_(new MainWindow(width,height))
 {
-	ServiceManager::provide(mainWindow_);
+	getServiceManager().provide(mainWindow_);
 }
 
 MainApplication::~MainApplication()
 {
-	ServiceManager::getDirectX().clearUp();
+	getServiceManager().getDirectX().clearUp();
 	delete mainWindow_;
 }
 
@@ -31,10 +31,10 @@ void MainApplication::runMainLoop()
 	mainWindow_->initWindowLoop();
 	int frameRate = 0;
 	DWORD startTime = GetCurrentTime();
-	ServiceManager::getDirectX().initGameLoop();
+	getServiceManager().getDirectX().initGameLoop();
 	while (mainWindow_->workWindowLoop())
 	{
-		ServiceManager::getDirectX().stepGameLoop();
+		getServiceManager().getDirectX().stepGameLoop();
 		if (++frameRate == MAX_FRAMERATE)
 		{
 			DWORD lastTime = GetCurrentTime();
@@ -49,5 +49,5 @@ void MainApplication::runMainLoop()
 
 HRESULT MainApplication::initDirectX()
 {
-	return ServiceManager::getDirectX().init();
+	return getServiceManager().getDirectX().init();
 }

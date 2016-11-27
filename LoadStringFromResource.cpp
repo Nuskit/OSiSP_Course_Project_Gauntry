@@ -7,7 +7,7 @@ LoadStringFromResource::LoadStringFromResource(unsigned int idResource)
 	LoadString(hInstance, idResource, buffer, LOAD_STRING_BUF_SIZE);
 }
 
-LoadStringFromResource::operator LPCWSTR() const
+LoadStringFromResource::operator LPCTSTR() const
 {
 	return buffer;
 }

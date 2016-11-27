@@ -3,14 +3,25 @@
 
 class DirectX;
 class WindowInformation;
+class UILoopState;
+class UILoopNull;
 class ServiceManager
 {
 public:
-	static void provide(DirectX* directX);
-	static void provide(WindowInformation* windowInformation);
-	static DirectX& getDirectX();
-	static WindowInformation& getWindowInformation();
+	static ServiceManager& getInstance();
+	void provide(DirectX* directX);
+	void provide(WindowInformation* windowInformation);
+	void provide(UILoopState* uiState);
+	DirectX& getDirectX();
+	WindowInformation& getWindowInformation();
+	UILoopState& getUIState();
 private:
-	static DirectX* directX_;
-	static WindowInformation* windowInformation_;
+	ServiceManager();
+	ServiceManager(const ServiceManager&);
+	DirectX* directX_;
+	WindowInformation* windowInformation_;
+	UILoopState* uiState_;
+	static UILoopNull uiStateNull;
 };
+
+ServiceManager& getServiceManager();
