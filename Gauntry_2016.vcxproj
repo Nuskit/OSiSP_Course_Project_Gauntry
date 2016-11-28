@@ -395,8 +395,10 @@
     <ClCompile Include="UILibrary.cpp" />
     <ClCompile Include="UILoopInitialize.cpp" />
     <ClCompile Include="UILoopMainMenu.cpp" />
+    <ClCompile Include="UILoopNewGame.cpp" />
     <ClCompile Include="UILoopNull.cpp" />
     <ClCompile Include="UILoopOptions.cpp" />
+    <ClCompile Include="UILoopState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -418,6 +420,7 @@
     <ClInclude Include="UILibrary.h" />
     <ClInclude Include="UILoopInitialize.h" />
     <ClInclude Include="UILoopMainMenu.h" />
+    <ClInclude Include="UILoopNewGame.h" />
     <ClInclude Include="UILoopNull.h" />
     <ClInclude Include="UILoopOptions.h" />
     <ClInclude Include="UILoopState.h" />

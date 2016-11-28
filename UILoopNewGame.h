@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "UILoopState.h"
 
-class UILoopNull :public UILoopState
+class UILoopNewGame :public UILoopState
 {
 public:
 	virtual bool MsgProc(MsgProcParam & msgProc) override;

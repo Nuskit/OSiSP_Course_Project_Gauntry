@@ -46,6 +46,12 @@
     <ClCompile Include="UILoopOptions.cpp">
       <Filter>States\UIStates</Filter>
     </ClCompile>
+    <ClCompile Include="UILoopNewGame.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
+    <ClCompile Include="UILoopState.cpp">
+      <Filter>States\UIStates</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
@@ -106,6 +112,9 @@
       <Filter>Infrastructure</Filter>
     </ClInclude>
     <ClInclude Include="UILoopOptions.h">
+      <Filter>States\UIStates</Filter>
+    </ClInclude>
+    <ClInclude Include="UILoopNewGame.h">
       <Filter>States\UIStates</Filter>
     </ClInclude>
   </ItemGroup>

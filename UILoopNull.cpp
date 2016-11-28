@@ -1,15 +1,19 @@
 #include "stdafx.h"
 #include "UILoopNull.h"
 
-void UILoopNull::enter()
-{
-}
-
-void UILoopNull::exit()
-{
-}
-
-bool UILoopNull::MsgProc(MsgProcParam& msgProc)
+bool UILoopNull::MsgProc(MsgProcParam & msgProc)
 {
 	return false;
+}
+
+void UILoopNull::enterInitialize()
+{
+}
+
+void UILoopNull::enterReply()
+{
+}
+
+void UILoopNull::exitInitialized()
+{
 }

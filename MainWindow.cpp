@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "MainWindow.h"
 #include "LoadStringFromResource.h"
-#include "UILoopInitialize.h"
 #include "ServiceManager.h"
+#include "WindowInfromation.h"
+#include "UILoopInitialize.h"
 
 enum
 {
@@ -25,10 +26,15 @@ LRESULT WINAPI MainWindow::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lP
 	}
 	default:
 	{
-		UILoopState::MsgProcParam msgProc{ hWnd, msg, wParam,lParam };
-		return getServiceManager().getUIState().MsgProc(msgProc)
-			? msgProc.result
-			: DefWindowProc(hWnd, msg, wParam, lParam);
+		UILoopState::MsgProcParam msgProc{ hWnd, msg, wParam,lParam,0,nullptr };
+		if (getServiceManager().getUIState().MsgProc(msgProc))
+		{
+			if (msgProc.nextState != nullptr)
+				getServiceManager().getWindowInformation().changeState(msgProc.nextState);
+			return msgProc.result;
+		}
+		else
+			return DefWindowProc(hWnd, msg, wParam, lParam);
 		break;
 	}
 	}
@@ -54,10 +60,10 @@ void MainWindow::changeState(UILoopState * uiState)
 {
 	assert(uiState != nullptr);
 	uiState_->exit();
-	uiState->enter();
-	getServiceManager().provide(uiState);
-	delete uiState_;
 	uiState_ = uiState;
+	getServiceManager().provide(uiState);
+	uiState->enter();
+	//delete oldState;
 }
 
 const DWORD MainWindow::getWidth()
@@ -76,7 +82,7 @@ HWND MainWindow::getHWND()
 }
 
 MainWindow::MainWindow(DWORD width, DWORD height) :windowWidth(width > 0 ? width : DEFAULT_WINDOW_WIDTH),
-	windowHeight(height > 0 ? height : DEFAULT_WINDOW_HEIGHT), hWnd(createWindowObject())
+windowHeight(height > 0 ? height : DEFAULT_WINDOW_HEIGHT), hWnd(createWindowObject())
 {
 }
 
@@ -96,7 +102,7 @@ bool MainWindow::workWindowLoop()
 
 void MainWindow::initWindowLoop()
 {
-	uiState_ = new UILoopStateInitialize();
+	uiState_ = &UILoopState::uiStateInitialize;
 	getServiceManager().provide(uiState_);
 	uiState_->enter();
 
@@ -110,5 +116,7 @@ void MainWindow::initWindowLoop()
 //-----------------------------------------------------------------------------
 MainWindow::~MainWindow()
 {
+	uiState_->exit();
+	//delete uiState_;
 	UnregisterClass(LoadStringFromResource(ID_APPLICATION_NAME), wc.hInstance);
 }

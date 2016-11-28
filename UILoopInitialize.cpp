@@ -5,38 +5,47 @@
 #include "Defines.h"
 #include "UILoopMainMenu.h"
 
-void UILoopStateInitialize::enter()
+
+UILoopInitialize UILoopState::uiStateInitialize;
+
+
+void UILoopInitialize::enterInitialize()
 {
-	WindowInformation& windowInformation = getServiceManager().getWindowInformation();
+		WindowInformation& windowInformation = getServiceManager().getWindowInformation();
 
-	//TODO: Load logo
-	MessageBeep(MB_ICONEXCLAMATION);
+		//TODO: Load logo
+		MessageBeep(MB_ICONEXCLAMATION);
 
-	timer = SetTimer(windowInformation.getHWND(), TIMER_INITIALIZE_ID, TIMER_INITIALIZE_TIMEOUT, NULL);
-	assert(timer != NULL);
+		timer = SetTimer(windowInformation.getHWND(), TIMER_INITIALIZE_ID, TIMER_INITIALIZE_TIMEOUT, NULL);
+		assert(timer != NULL);
 }
 
-void UILoopStateInitialize::exit()
+void UILoopInitialize::enterReply()
+{
+}
+
+void UILoopInitialize::exitInitialized()
 {
 	killTimer();
 }
 
-void UILoopStateInitialize::killTimer()
+void UILoopInitialize::killTimer()
 {
 	if (timer)
 	{
-		KillTimer(NULL, timer);
+		KillTimer(getServiceManager().getWindowInformation().getHWND(), timer);
 		timer = NULL;
 	}
 }
 
-bool UILoopStateInitialize::MsgProc(MsgProcParam& msgProc)
+bool UILoopInitialize::MsgProc(MsgProcParam& msgProc)
 {
 	switch (msgProc.msg)
 	{
 	case (WM_TIMER):
 		killTimer();
-		getServiceManager().getWindowInformation().changeState(new UILoopMainMenu());
+		msgProc.nextState = &UILoopState::uiStateMainMenu;
+		return true;
 		break;
 	}
 	return false;

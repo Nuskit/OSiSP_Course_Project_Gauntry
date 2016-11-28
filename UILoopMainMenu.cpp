@@ -4,13 +4,23 @@
 #include "ServiceManager.h"
 #include "WindowInfromation.h"
 #include "LoadStringFromResource.h"
+#include "UILoopOptions.h"
+#include "UILoopNewGame.h"
 
-void UILoopMainMenu::enter()
+UILoopMainMenu UILoopState::uiStateMainMenu;
+
+void UILoopMainMenu::enterInitialize()
 {
-	buttons.push(createMenuButton(ID_BUTTON_NEW_GAME, 0));
-	buttons.push(createMenuButton(ID_BUTTON_OPTIONS, 1));
-	buttons.push(createMenuButton(ID_BUTTON_EXIT, 2));
+	buttons.push_back(createMenuButton(ID_BUTTON_NEW_GAME, 0));
+	buttons.push_back(createMenuButton(ID_BUTTON_OPTIONS, 1));
+	buttons.push_back(createMenuButton(ID_BUTTON_EXIT, 2));
 	MessageBeep(MB_OK);
+}
+
+void UILoopMainMenu::enterReply()
+{
+	for (auto& button : buttons)
+		ShowWindow(button, SW_SHOW);
 }
 
 HWND UILoopMainMenu::createMenuButton(int idResourceButton, int indexNumber)
@@ -22,10 +32,10 @@ HWND UILoopMainMenu::createMenuButton(int idResourceButton, int indexNumber)
 	return button;
 }
 
-void UILoopMainMenu::exit()
+void UILoopMainMenu::exitInitialized()
 {
-	while (buttons.size() > 0)
-		CloseHandle(buttons.top());
+	for (auto& button : buttons)
+		ShowWindow(button, SW_HIDE);
 }
 
 bool UILoopMainMenu::MsgProc(MsgProcParam & msgProc)
@@ -36,14 +46,22 @@ bool UILoopMainMenu::MsgProc(MsgProcParam & msgProc)
 	{
 		switch (msgProc.wParam)
 		{
+		case ID_BUTTON_NEW_GAME:
+			msgProc.nextState = &UILoopState::uiStateNewGame;
+			return true;
+			break;
 		case ID_BUTTON_OPTIONS:
+			msgProc.nextState = &UILoopState::uiStateOptions;
+			return true;
 			break;
 		case ID_BUTTON_EXIT:
 			SendMessage(msgProc.hWnd, WM_CLOSE, 0, 0);
+			return true;
 			break;
 		}
 		break;
 	}
+	break;
 	}
 	return false;
 }
