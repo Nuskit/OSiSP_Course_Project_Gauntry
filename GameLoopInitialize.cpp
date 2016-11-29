@@ -8,6 +8,7 @@
 #define CLIPPING_NEAR 1.0f
 #define CLIPPING_FAR 100.0f
 
+GameLoopInitialize  GameLoopState::gameStateInitialize;
 
 void GameLoopInitialize::processInput()
 {
@@ -17,11 +18,11 @@ void GameLoopInitialize::update()
 {
 }
 
-void GameLoopInitialize::render(double lagTime)
+void GameLoopInitialize::renderFull(double lagTime)
 {
 }
 
-void GameLoopInitialize::enter()
+void GameLoopInitialize::enterInitialize()
 {
 	D3DXMATRIX matrixProjection;
 	D3DXMatrixPerspectiveFovLH(&matrixProjection, VISION_ANGLE, calculateAspect(), CLIPPING_NEAR, CLIPPING_FAR);
@@ -29,12 +30,16 @@ void GameLoopInitialize::enter()
 	getServiceManager().getDirectX().setupMatrixPerspective(matrixProjection);
 }
 
-void GameLoopInitialize::exit()
-{
-}
-
 const FLOAT GameLoopInitialize::calculateAspect()
 {
 	WindowInformation& windowInfromation = getServiceManager().getWindowInformation();
 	return static_cast<FLOAT>(windowInfromation.getWidth()) / windowInfromation.getHeight();
+}
+
+void GameLoopInitialize::enterReply()
+{
+}
+
+void GameLoopInitialize::exitInitialized()
+{
 }

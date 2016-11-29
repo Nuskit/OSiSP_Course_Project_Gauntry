@@ -1,17 +1,17 @@
 #include "stdafx.h"
-#include "UILoopState.h"
+#include "BaseState.h"
 
-bool UILoopState::isInitialize()
+bool BaseState::isInitialize()
 {
 	return isInit;
 }
 
-void UILoopState::setInitialized()
+void BaseState::setInitialized()
 {
 	isInit = true;
 }
 
-void UILoopState::enter()
+void BaseState::enter()
 {
 	if (isInitialize())
 		enterReply();
@@ -22,7 +22,7 @@ void UILoopState::enter()
 	}
 }
 
-void UILoopState::exit()
+void BaseState::exit()
 {
 	if (isInitialize())
 		exitInitialized();

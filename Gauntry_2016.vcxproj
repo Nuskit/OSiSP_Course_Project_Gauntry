@@ -382,10 +382,16 @@
     <None Include="directx.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseState.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="DirectX_9.cpp" />
     <ClCompile Include="d3dUtility.cpp" />
     <ClCompile Include="GameLoopInitialize.cpp" />
+    <ClCompile Include="GameLoopMainMenu.cpp" />
+    <ClCompile Include="GameLoopNewGame.cpp" />
+    <ClCompile Include="GameLoopState.cpp" />
+    <ClCompile Include="LinkUIGameState.cpp" />
     <ClCompile Include="LoadStringFromResource.cpp" />
     <ClCompile Include="MainApplication.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -398,19 +404,22 @@
     <ClCompile Include="UILoopNewGame.cpp" />
     <ClCompile Include="UILoopNull.cpp" />
     <ClCompile Include="UILoopOptions.cpp" />
-    <ClCompile Include="UILoopState.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseState.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="DirectX_9.h" />
     <ClInclude Include="d3dUtility.h" />
+    <ClInclude Include="GameLoopMainMenu.h" />
+    <ClInclude Include="GameLoopNewGame.h" />
     <ClInclude Include="GameLoopState.h" />
     <ClInclude Include="GameLoopInitialize.h" />
+    <ClInclude Include="LinkUIGameState.h" />
     <ClInclude Include="LoadStringFromResource.h" />
     <ClInclude Include="MainApplication.h" />
     <ClInclude Include="MainWindow.h" />

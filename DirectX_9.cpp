@@ -25,6 +25,7 @@ void DirectX_9::setupMatrixPerspective(const D3DXMATRIX& matrix)
 
 const HRESULT DirectX_9::createDevice()
 {
+	
 	// Set up the structure used to create the D3DDevice
 	D3DPRESENT_PARAMETERS d3dpp;
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
@@ -36,7 +37,7 @@ const HRESULT DirectX_9::createDevice()
 	d3dpp.AutoDepthStencilFormat = D3DFMT_D24S8;
 	d3dpp.EnableAutoDepthStencil = 1;
 	d3dpp.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
-
+	
 	D3DCAPS9 caps;
 	pGraphicD3D->GetDeviceCaps(
 		D3DADAPTER_DEFAULT, // ќзначает первичный видеоадаптер
@@ -63,7 +64,6 @@ const HRESULT DirectX_9::createDevice()
 	{
 		return E_FAIL;
 	}
-
 	// Device state would normally be set here
 
 
@@ -85,12 +85,33 @@ const HRESULT DirectX_9::createDevice()
 	return S_OK;
 }
 
+void DirectX_9::preRender()
+{
+	// Clear the backbuffer to a blue color
+	pGraphicD3DDevice->Clear(0, NULL, D3DCLEAR_TARGET | D3DCLEAR_ZBUFFER | D3DCLEAR_STENCIL, D3DCOLOR_XRGB(0, 0, 240), 1.0f, 0);
+}
+
+bool DirectX_9::startRender()
+{
+	return SUCCEEDED(pGraphicD3DDevice->BeginScene());
+}
+
+void DirectX_9::endRender()
+{
+	pGraphicD3DDevice->EndScene();
+}
+
+void DirectX_9::postRender()
+{
+	// Present the backbuffer contents to the display
+	pGraphicD3DDevice->Present(NULL, NULL, NULL, NULL);
+}
+
 void DirectX_9::clearUp()
 {
 		d3d::Release<LPDIRECT3D9>(pGraphicD3D);
 		d3d::Release<LPDIRECT3DDEVICE9>(pGraphicD3DDevice);
 		d3d::Release<LPDIRECT3DVERTEXBUFFER9>(pGraphicVB);
-
 	//if (Static_Objects != NULL)
 	//	delete[]Static_Objects;
 	////добавить удаление объектов

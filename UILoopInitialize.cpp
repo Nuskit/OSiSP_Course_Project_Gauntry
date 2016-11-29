@@ -5,9 +5,7 @@
 #include "Defines.h"
 #include "UILoopMainMenu.h"
 
-
 UILoopInitialize UILoopState::uiStateInitialize;
-
 
 void UILoopInitialize::enterInitialize()
 {

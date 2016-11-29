@@ -4,6 +4,8 @@
 #include "ServiceManager.h"
 #include "WindowInfromation.h"
 #include "UILoopInitialize.h"
+#include "DirectX.h"
+#include "LinkUIGameState.h"
 
 enum
 {
@@ -31,6 +33,7 @@ LRESULT WINAPI MainWindow::MsgProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lP
 		{
 			if (msgProc.nextState != nullptr)
 				getServiceManager().getWindowInformation().changeState(msgProc.nextState);
+			
 			return msgProc.result;
 		}
 		else
@@ -63,6 +66,7 @@ void MainWindow::changeState(UILoopState * uiState)
 	uiState_ = uiState;
 	getServiceManager().provide(uiState);
 	uiState->enter();
+	getServiceManager().getDirectX().changeState(GetLinkUiToGameStates(uiState));
 	//delete oldState;
 }
 
@@ -88,6 +92,8 @@ windowHeight(height > 0 ? height : DEFAULT_WINDOW_HEIGHT), hWnd(createWindowObje
 
 bool MainWindow::workWindowLoop()
 {
+	InvalidateRect(hWnd, NULL, false);
+	UpdateWindow(hWnd);
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
 	while (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))

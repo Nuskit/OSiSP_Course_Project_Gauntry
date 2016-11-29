@@ -49,8 +49,23 @@
     <ClCompile Include="UILoopNewGame.cpp">
       <Filter>States\UIStates</Filter>
     </ClCompile>
-    <ClCompile Include="UILoopState.cpp">
-      <Filter>States\UIStates</Filter>
+    <ClCompile Include="GameLoopState.cpp">
+      <Filter>States\GameLoopStates</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoopMainMenu.cpp">
+      <Filter>States\GameLoopStates</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkUIGameState.cpp">
+      <Filter>States</Filter>
+    </ClCompile>
+    <ClCompile Include="GameLoopNewGame.cpp">
+      <Filter>States\GameLoopStates</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +132,18 @@
     <ClInclude Include="UILoopNewGame.h">
       <Filter>States\UIStates</Filter>
     </ClInclude>
+    <ClInclude Include="GameLoopMainMenu.h">
+      <Filter>States\GameLoopStates</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkUIGameState.h">
+      <Filter>States</Filter>
+    </ClInclude>
+    <ClInclude Include="GameLoopNewGame.h">
+      <Filter>States\GameLoopStates</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Infrastructure">
@@ -154,6 +181,9 @@
     </Filter>
     <Filter Include="Services\ServiceManager">
       <UniqueIdentifier>{ed9b1119-e9f8-4cc4-86eb-460aa71a3c12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{b3ad51ec-dce9-4573-ae27-456654b852a2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

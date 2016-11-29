@@ -4,7 +4,15 @@
 class BaseState
 {
 public:
-	virtual void enter() = 0;
-	virtual void exit() = 0;
+	void enter();
+	void exit();
 	virtual ~BaseState() {};
+protected:
+	virtual void enterInitialize() = 0;
+	virtual void enterReply() = 0;
+	virtual void exitInitialized() = 0;
+	bool isInitialize();
+private:
+	void setInitialized();
+	bool isInit = false;
 };

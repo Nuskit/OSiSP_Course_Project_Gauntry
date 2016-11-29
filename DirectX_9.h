@@ -9,6 +9,10 @@ public:
 	virtual void clearUp() override;
 	virtual const HRESULT init() override;
 	virtual void setupMatrixPerspective(const D3DXMATRIX& matrix) override;
+	virtual void preRender() override;
+	virtual bool startRender() override;
+	virtual void endRender() override;
+	virtual void postRender() override;
 private:
 	const HRESULT createDevice();
 
