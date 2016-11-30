@@ -38,6 +38,19 @@ GameObjectTexture::~GameObjectTexture()
 	delete[] materials;
 }
 
+void GameObjectTexture::setMaterialEmissive(UINT number,const D3DCOLORVALUE& rgba)
+{
+	assert(meshX->NumMaterials > number);
+	materials[number].Emissive = rgba;
+}
+
+void GameObjectTexture::loadExtraTextures(UINT number, LPCWSTR nameFile)
+{
+	assert(meshX->NumMaterials > number);
+	d3d::Release<LPDIRECT3DTEXTURE9>(textures[number]);
+	getServiceManager().getDirectX().createTextureFromFile(nameFile, textures[number]);
+}
+
 void GameObjectTexture::LoadTextureFromX(LPCSTR folder)
 {
 	//

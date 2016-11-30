@@ -8,8 +8,10 @@ class TexturedGameObject :public GameObject
 public:
 	TexturedGameObject(LPCWSTR nameFile, LPCSTR folder, GameObject* parent = nullptr);
 	virtual ~TexturedGameObject();
-protected:
-	virtual void renderCustom() override;
+	void setMaterialEmissive(UINT number, const D3DCOLORVALUE& rgba);
+	void loadExtraTextures(UINT number, LPCWSTR nameFile);
+public:
+	virtual void renderCustom(double lagTime) override;
 	virtual void updateCustom() override;
 private:
 	GameObjectTexture* textureGameObject;

@@ -26,17 +26,26 @@ public:
 	virtual bool loadMeshFromX(LPCWSTR pFilename, MeshFromX& loadedMesh, DWORD Options = D3DXMESH_MANAGED) = 0;
 	//only v_9
 	virtual HRESULT createTextureFromFile(LPCSTR pSrcFile, LPDIRECT3DTEXTURE9& pTexture) = 0;
+	virtual HRESULT createTextureFromFile(LPCWSTR pSrcFile, LPDIRECT3DTEXTURE9 & pTexture) = 0;
 	virtual void setWorldTransform(const D3DXMATRIX& worldMatrix) = 0;
 	//only v_9
 	virtual void setMaterial(const D3DMATERIAL9& material) = 0;
 	//only v_9
 	virtual void setTexture(const LPDIRECT3DTEXTURE9& texture) = 0;
 	virtual void setViewTransform(const D3DXMATRIX& viewMatrix) = 0;
+	//only v_9
+	virtual void setLight(DWORD index, const D3DLIGHT9& light) = 0;
+	virtual void enableLight(DWORD index, bool value) = 0;
+	virtual HRESULT setRenderState(D3DRENDERSTATETYPE state, DWORD value) = 0;
+	virtual HRESULT getRenderState(D3DRENDERSTATETYPE state, DWORD& value) = 0;
 	void changeState(GameLoopState* uiState);
 	virtual ~DirectX();
 	void initGameLoop();
 	void stepGameLoop();
 private:
+	DirectX(const DirectX&);
+	DirectX& operator=(const DirectX&);
+
 	void updateGame();
 	GameLoopState *gameLoop_;
 	DWORD previous;

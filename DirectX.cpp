@@ -2,7 +2,7 @@
 #include "DirectX.h"
 #include "GameLoopInitialize.h"
 
-#define MS_PER_UPDATE 100
+#define MS_PER_UPDATE 20
 
 DirectX::DirectX():gameLoop_(nullptr)
 {

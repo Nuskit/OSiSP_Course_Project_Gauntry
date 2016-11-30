@@ -1,5 +1,7 @@
 #pragma once
 
+#define _USE_MATH_DEFINES
+
 #include "resource.h"
 #include <Windows.h>
 #include <d3dx9mesh.h>
@@ -11,3 +13,4 @@
 #include <cassert>
 #endif
 #include <stdexcept>
+#include <cmath>

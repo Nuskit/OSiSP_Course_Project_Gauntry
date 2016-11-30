@@ -91,6 +91,12 @@
     <ClCompile Include="Terrain.cpp">
       <Filter>Terrain</Filter>
     </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Light</Filter>
+    </ClCompile>
+    <ClCompile Include="GameSkyBox.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
@@ -192,7 +198,12 @@
     <ClInclude Include="Terrain.h">
       <Filter>Terrain</Filter>
     </ClInclude>
-    <ClInclude Include="Light.h" />
+    <ClInclude Include="Light.h">
+      <Filter>Light</Filter>
+    </ClInclude>
+    <ClInclude Include="GameSkyBox.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Infrastructure">
@@ -248,6 +259,12 @@
     </Filter>
     <Filter Include="Shortcuts">
       <UniqueIdentifier>{f0139a85-0bbd-4761-be32-1e7f4c1ef2c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Light">
+      <UniqueIdentifier>{1a441681-b81d-481b-b10f-5c295b4c9d6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Entities">
+      <UniqueIdentifier>{00d63fb8-105c-4ddc-8bb7-c53c21e08afb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

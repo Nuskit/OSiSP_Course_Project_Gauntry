@@ -4,8 +4,11 @@
 #include "DirectX.h"
 
 GameObject::GameObject(D3DXVECTOR3 scale, D3DXVECTOR3 position, D3DXVECTOR3 view, GameObject* parent) :
-	scale_(scale), position_(position), view_(view), parent_(parent)
+	scaleMatrix_(scale), positionMatrix_(position), viewMatrix_(view), parent_(parent)
 {
+	D3DXMatrixTranslation(&positionMatrix_, position.x, position.y, position.z);
+	D3DXMatrixScaling(&scaleMatrix_, scale.x, scale.y, scale.z);
+	D3DXMatrixRotationYawPitchRoll(&viewMatrix_, view.x, view.y, view.z);
 	if (parent)
 		parent->addChildObject(*this);
 }
@@ -15,12 +18,12 @@ GameObject::GameObject(D3DXVECTOR3 position, D3DXVECTOR3 view, GameObject* paren
 {
 }
 
-GameObject::GameObject(D3DXVECTOR3 view, GameObject* parent) : 
+GameObject::GameObject(D3DXVECTOR3 view, GameObject* parent) :
 	GameObject(D3DXVECTOR3(0., 0., 0.), view, parent)
 {
 }
 
-GameObject::GameObject(GameObject * parent) : 
+GameObject::GameObject(GameObject * parent) :
 	GameObject(D3DXVECTOR3(1., 1., 1.), parent)
 {
 }
@@ -31,34 +34,34 @@ GameObject::~GameObject()
 		parent_->removeChildObject(*this);
 }
 
-D3DXVECTOR3 GameObject::getPosition()
+D3DXMATRIX GameObject::getPosition()
 {
-	return position_;
+	return positionMatrix_;
 }
 
-void GameObject::setPosition(const D3DXVECTOR3 & newPosition)
+void GameObject::setPosition(const D3DXMATRIX & newPosition)
 {
-	position_ = newPosition;
+	positionMatrix_ = newPosition;
 }
 
-D3DXVECTOR3 GameObject::getScale()
+D3DXMATRIX GameObject::getScale()
 {
-	return scale_;
+	return scaleMatrix_;
 }
 
-void GameObject::setScale(const D3DXVECTOR3 & newScale)
+void GameObject::setScale(const D3DXMATRIX & newScale)
 {
-	scale_ = newScale;
+	scaleMatrix_ = newScale;
 }
 
-D3DXVECTOR3 GameObject::getView()
+D3DXMATRIX GameObject::getView()
 {
-	return view_;
+	return viewMatrix_;
 }
 
-void GameObject::setView(const D3DXVECTOR3 & newView)
+void GameObject::setView(const D3DXMATRIX & newView)
 {
-	view_ = newView;
+	viewMatrix_ = newView;
 }
 
 void GameObject::update()
@@ -69,12 +72,12 @@ void GameObject::update()
 void GameObject::render(double lagTime)
 {
 	setObjectPosition();
-	renderCustom();
+	renderCustom(lagTime);
 }
 
 void GameObject::setObjectPosition()
 {
-	getServiceManager().getDirectX().setWorldTransform(scaleObject()*moveObject()*viewObject());
+	getServiceManager().getDirectX().setWorldTransform(getScale()*getPosition()*getView());
 }
 
 void GameObject::addChildObject(GameObject & childObject)
@@ -87,23 +90,17 @@ void GameObject::removeChildObject(GameObject & childObject)
 	childGameObjects.remove(&childObject);
 }
 
-D3DXMATRIX GameObject::scaleObject()
+void GameObject::updateScale(const D3DXMATRIX& scaleMatrix)
 {
-	D3DXMATRIX scaleMatrix;
-	D3DXMatrixScaling(&scaleMatrix, scale_.x, scale_.y, scale_.z);
-	return scaleMatrix;
+	scaleMatrix_ *= scaleMatrix;
 }
 
-D3DXMATRIX GameObject::moveObject()
+void GameObject::updatePosition(const D3DXMATRIX& positionMatrix)
 {
-	D3DXMATRIX moveMatrix;
-	D3DXMatrixTranslation(&moveMatrix, position_.x, position_.y, position_.z);
-	return moveMatrix;
+	positionMatrix_ *= positionMatrix;
 }
 
-D3DXMATRIX GameObject::viewObject()
+void GameObject::updateView(const D3DXMATRIX& viewMatrix)
 {
-	D3DXMATRIX viewMatrix;
-	D3DXMatrixRotationYawPitchRoll(&viewMatrix, view_.x, view_.y, view_.z);
-	return viewMatrix;
+	viewMatrix_ *= viewMatrix;
 }

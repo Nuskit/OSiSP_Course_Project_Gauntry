@@ -42,7 +42,7 @@ Terrain::Terrain(
 	{
 
 		// scale heights
-		for (int i = 0; i < _heightSize; i++)
+		for (DWORD i = 0; i < _heightSize; i++)
 			_heightmap[i] *= heightScale;
 
 		// compute the vertices
@@ -301,9 +301,9 @@ bool Terrain::lightTerrain(D3DXVECTOR3* directionToLight)
 		0);         // no lock flags specified
 
 	DWORD* imageData = (DWORD*)lockedRect.pBits;
-	for (int i = 0; i < textureDesc.Height; i++)
+	for (UINT i = 0; i < textureDesc.Height; i++)
 	{
-		for (int j = 0; j < textureDesc.Width; j++)
+		for (UINT j = 0; j < textureDesc.Width; j++)
 		{
 			// index into texture, note we use the pitch and divide by 
 			// four since the pitch is given in bytes and there are 

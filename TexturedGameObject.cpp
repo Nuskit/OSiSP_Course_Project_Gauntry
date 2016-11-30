@@ -12,11 +12,21 @@ TexturedGameObject::~TexturedGameObject()
 	delete textureGameObject;
 }
 
+void TexturedGameObject::setMaterialEmissive(UINT number, const D3DCOLORVALUE & rgba)
+{
+	textureGameObject->setMaterialEmissive(number, rgba);
+}
+
+void TexturedGameObject::loadExtraTextures(UINT number, LPCWSTR nameFile)
+{
+	textureGameObject->loadExtraTextures(number, nameFile);
+}
+
 void TexturedGameObject::updateCustom()
 {
 }
 
-void TexturedGameObject::renderCustom()
+void TexturedGameObject::renderCustom(double lagTime)
 {
 	textureGameObject->drawTexture();
 }

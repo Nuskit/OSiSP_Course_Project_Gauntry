@@ -5,6 +5,9 @@
 #include "CameraController.h"
 #include "DirectX.h"
 #include "ShortcutController.h"
+#include "d3dUtility.h"
+#include "ServiceManager.h"
+#include "DirectX.h"
 
 Player::Player():camera_(new Camera())
 {
@@ -16,10 +19,26 @@ Player::~Player()
 	delete camera_;
 }
 
-void Player::renderCustom()
+void Player::renderCustom(double lagTime)
 {
 	camera_->getViewMatrix();
 	getServiceManager().getDirectX().setViewTransform(*(camera_->V));
+	
+	static D3DXVECTOR3 look, position;
+	camera_->getLook(&look);
+	camera_->getPosition(&position);
+
+	static D3DLIGHT9 flashLight = d3d::InitSpotLight(&position, &look, &D3DXCOLOR(1.0f, 1.0f, 1.0f, 0.0f));
+
+	flashLight.Position = position;
+	flashLight.Direction = look;
+	flashLight.Range = 200;
+	flashLight.Theta = 0.5;
+	flashLight.Phi = 1;
+
+	
+	getServiceManager().getDirectX().setLight(2, flashLight);
+	getServiceManager().getDirectX().enableLight(2, true);
 }
 
 void Player::updateCustom()

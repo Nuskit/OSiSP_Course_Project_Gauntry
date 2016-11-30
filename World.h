@@ -15,4 +15,10 @@ public:
 private:
 	std::list<GameObject*> gameObjects;
 	Terrain *terrain;
+
+	//TODO: insert in module entities
+private:
+	GameObject* createChair();
+	void createSkyBox();
+	GameObject* createArcopolis();
 };

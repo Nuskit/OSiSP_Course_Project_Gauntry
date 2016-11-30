@@ -394,6 +394,8 @@
     <ClCompile Include="GameLoopState.cpp" />
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectTexture.cpp" />
+    <ClCompile Include="GameSkyBox.cpp" />
+    <ClCompile Include="Light.cpp" />
     <ClCompile Include="LinkUIGameState.cpp" />
     <ClCompile Include="LoadStringFromResource.cpp" />
     <ClCompile Include="MainApplication.cpp" />
@@ -430,6 +432,7 @@
     <ClInclude Include="GameLoopInitialize.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectTexture.h" />
+    <ClInclude Include="GameSkyBox.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="LinkUIGameState.h" />
     <ClInclude Include="LoadStringFromResource.h" />

@@ -9,7 +9,7 @@ public:
 	Player();
 	~Player();
 protected:
-	virtual void renderCustom() override;
+	virtual void renderCustom(double lagTime) override;
 	virtual void updateCustom() override;
 private:
 	Camera* camera_;

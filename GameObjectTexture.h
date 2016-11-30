@@ -9,6 +9,8 @@ public:
 	GameObjectTexture(LPCWSTR nameFile, LPCSTR folder);
 	void drawTexture();
 	~GameObjectTexture();
+	void setMaterialEmissive(UINT number, const D3DCOLORVALUE& rgba);
+	void loadExtraTextures(UINT number, LPCWSTR nameFile);
 private:
 	void LoadTextureFromX(LPCSTR folder);
 	struct _MeshFromX* meshX;

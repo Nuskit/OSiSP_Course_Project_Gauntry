@@ -4,7 +4,7 @@
 #include "ServiceManager.h"
 #include "WindowInfromation.h"
 
-DirectX_9::DirectX_9():pGraphicD3D(NULL), pGraphicD3DDevice(NULL), pGraphicVB(NULL)
+DirectX_9::DirectX_9() :pGraphicD3D(NULL), pGraphicD3DDevice(NULL), pGraphicVB(NULL)
 {
 }
 
@@ -25,7 +25,7 @@ void DirectX_9::setupMatrixPerspective(const D3DXMATRIX& matrix)
 
 const HRESULT DirectX_9::createDevice()
 {
-	
+
 	// Set up the structure used to create the D3DDevice
 	D3DPRESENT_PARAMETERS d3dpp;
 	ZeroMemory(&d3dpp, sizeof(d3dpp));
@@ -37,7 +37,7 @@ const HRESULT DirectX_9::createDevice()
 	d3dpp.AutoDepthStencilFormat = D3DFMT_D24S8;
 	d3dpp.EnableAutoDepthStencil = 1;
 	d3dpp.Flags = D3DPRESENTFLAG_LOCKABLE_BACKBUFFER;
-	
+
 	D3DCAPS9 caps;
 	pGraphicD3D->GetDeviceCaps(
 		D3DADAPTER_DEFAULT, // ќзначает первичный видеоадаптер
@@ -81,8 +81,28 @@ const HRESULT DirectX_9::createDevice()
 
 	// Turn on ambient lighting 
 	pGraphicD3DDevice->SetRenderState(D3DRS_AMBIENT, 0x0000000);
-
+	pGraphicD3DDevice->SetRenderState(D3DRS_LIGHTING, true);
 	return S_OK;
+}
+
+HRESULT DirectX_9::setRenderState(D3DRENDERSTATETYPE state, DWORD value)
+{
+	return pGraphicD3DDevice->SetRenderState(state, value);
+}
+
+HRESULT DirectX_9::getRenderState(D3DRENDERSTATETYPE state, DWORD & value)
+{
+	return pGraphicD3DDevice->GetRenderState(state, &value);
+}
+
+void DirectX_9::setLight(DWORD index, const D3DLIGHT9 & light)
+{
+	pGraphicD3DDevice->SetLight(index, &light);
+}
+
+void DirectX_9::enableLight(DWORD index, bool value)
+{
+	pGraphicD3DDevice->LightEnable(index, value);
 }
 
 void DirectX_9::setViewTransform(const D3DXMATRIX & viewMatrix)
@@ -108,6 +128,11 @@ void DirectX_9::setWorldTransform(const D3DXMATRIX & worldMatrix)
 HRESULT DirectX_9::createTextureFromFile(LPCSTR pSrcFile, LPDIRECT3DTEXTURE9 & pTexture)
 {
 	return D3DXCreateTextureFromFileA(pGraphicD3DDevice, pSrcFile, &pTexture);
+}
+
+HRESULT DirectX_9::createTextureFromFile(LPCWSTR pSrcFile, LPDIRECT3DTEXTURE9 & pTexture)
+{
+	return D3DXCreateTextureFromFileW(pGraphicD3DDevice, pSrcFile, &pTexture);
 }
 
 void DirectX_9::preRender()
@@ -143,9 +168,9 @@ bool DirectX_9::loadMeshFromX(LPCWSTR pFilename, MeshFromX& loadedMesh, DWORD Op
 
 void DirectX_9::clearUp()
 {
-		d3d::Release<LPDIRECT3D9>(pGraphicD3D);
-		d3d::Release<LPDIRECT3DDEVICE9>(pGraphicD3DDevice);
-		d3d::Release<LPDIRECT3DVERTEXBUFFER9>(pGraphicVB);
+	d3d::Release<LPDIRECT3D9>(pGraphicD3D);
+	d3d::Release<LPDIRECT3DDEVICE9>(pGraphicD3DDevice);
+	d3d::Release<LPDIRECT3DVERTEXBUFFER9>(pGraphicVB);
 	//if (Static_Objects != NULL)
 	//	delete[]Static_Objects;
 	////добавить удаление объектов

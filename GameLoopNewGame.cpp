@@ -11,8 +11,6 @@ GameLoopNewGame GameLoopState::gameStateNewGame;
 void GameLoopNewGame::enterInitialize()
 {
 	getServiceManager().provide(new World());
-	getServiceManager().getWorld().addObject(
-		new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_CHAIR), LoadStringFromResourceA(IDS_TEXTURE_CHAIR_FOLDER)));
 }
 
 void GameLoopNewGame::enterReply()

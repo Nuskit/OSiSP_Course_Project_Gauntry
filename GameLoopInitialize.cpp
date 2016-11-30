@@ -4,9 +4,9 @@
 #include "DirectX.h"
 #include "WindowInfromation.h"
 
-#define VISION_ANGLE D3DX_PI / 4
+#define VISION_ANGLE (D3DX_PI / 4)
 #define CLIPPING_NEAR 1.0f
-#define CLIPPING_FAR 100.0f
+#define CLIPPING_FAR 10000.0f
 
 GameLoopInitialize  GameLoopState::gameStateInitialize;
 
