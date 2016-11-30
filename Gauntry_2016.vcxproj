@@ -403,6 +403,7 @@
     <ClCompile Include="ServiceManager.cpp" />
     <ClCompile Include="ShortcutController.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Terrain.cpp" />
     <ClCompile Include="TexturedGameObject.cpp" />
     <ClCompile Include="UILibrary.cpp" />
     <ClCompile Include="UILoopInitialize.cpp" />
@@ -429,6 +430,7 @@
     <ClInclude Include="GameLoopInitialize.h" />
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectTexture.h" />
+    <ClInclude Include="Light.h" />
     <ClInclude Include="LinkUIGameState.h" />
     <ClInclude Include="LoadStringFromResource.h" />
     <ClInclude Include="MainApplication.h" />
@@ -438,6 +440,7 @@
     <ClInclude Include="ServiceManager.h" />
     <ClInclude Include="ShortcutController.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Terrain.h" />
     <ClInclude Include="TexturedGameObject.h" />
     <ClInclude Include="UILibrary.h" />
     <ClInclude Include="UILoopInitialize.h" />

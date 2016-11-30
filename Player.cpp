@@ -44,5 +44,17 @@ void Player::updateCustom()
 		case (0x44):
 			camera_->strafe(MOVE_DELTA);
 			break;
+		case (VK_UP):
+			camera_->pitch(MOUSE_SENSITIVITY);
+			break;
+		case (VK_DOWN):
+			camera_->pitch(-MOUSE_SENSITIVITY);
+			break;
+		case (VK_LEFT):
+			camera_->yaw(-MOUSE_SENSITIVITY);
+			break;
+		case (VK_RIGHT):
+			camera_->yaw(MOUSE_SENSITIVITY);
+			break;
 		}
 }

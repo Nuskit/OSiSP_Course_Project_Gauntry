@@ -2,9 +2,11 @@
 #include "stdafx.h"
 
 class GameObject;
+class Terrain;
 class World
 {
 public:
+	World();
 	~World();
 	void addObject(GameObject* gameObject);
 	void removeObject(GameObject* gameObject);
@@ -12,4 +14,5 @@ public:
 	void render(double lagTime);
 private:
 	std::list<GameObject*> gameObjects;
+	Terrain *terrain;
 };

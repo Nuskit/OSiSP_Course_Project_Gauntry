@@ -4,6 +4,7 @@
 
 class DirectX_9 :public DirectX
 {
+	friend Terrain;
 public:
 	DirectX_9();
 	virtual void clearUp() override;

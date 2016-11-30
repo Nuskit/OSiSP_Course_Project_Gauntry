@@ -11,6 +11,7 @@ typedef struct _MeshFromX
 }MeshFromX;
 
 class GameLoopState;
+class Terrain;
 class DirectX
 {
 public:

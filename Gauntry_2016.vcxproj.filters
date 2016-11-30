@@ -86,7 +86,10 @@
       <Filter>Camera</Filter>
     </ClCompile>
     <ClCompile Include="ShortcutController.cpp">
-      <Filter>ShortCuts</Filter>
+      <Filter>Shortcuts</Filter>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp">
+      <Filter>Terrain</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -184,8 +187,12 @@
       <Filter>Camera</Filter>
     </ClInclude>
     <ClInclude Include="ShortcutController.h">
-      <Filter>ShortCuts</Filter>
+      <Filter>Shortcuts</Filter>
     </ClInclude>
+    <ClInclude Include="Terrain.h">
+      <Filter>Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Infrastructure">
@@ -236,7 +243,10 @@
     <Filter Include="States\BaseState">
       <UniqueIdentifier>{802e640d-99df-4301-81a3-a381d34e29d3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ShortCuts">
+    <Filter Include="Terrain">
+      <UniqueIdentifier>{345d6f82-f23e-4beb-8de9-adfdb845e95d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shortcuts">
       <UniqueIdentifier>{f0139a85-0bbd-4761-be32-1e7f4c1ef2c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
