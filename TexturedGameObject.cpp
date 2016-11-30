@@ -12,6 +12,10 @@ TexturedGameObject::~TexturedGameObject()
 	delete textureGameObject;
 }
 
+void TexturedGameObject::updateCustom()
+{
+}
+
 void TexturedGameObject::renderCustom()
 {
 	textureGameObject->drawTexture();

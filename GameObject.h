@@ -1,6 +1,9 @@
 #pragma once
 #include "stdafx.h"
 
+#define MOVE_DELTA 0.5
+#define MOUSE_SENSITIVITY 0.05
+
 class GameObject
 {
 public:
@@ -20,7 +23,9 @@ public:
 	void render(double lagTime);
 	void addChildObject(GameObject& childObject);
 	void removeChildObject(GameObject& childObject);
+protected:
 	virtual void renderCustom() = 0;
+	virtual void updateCustom() = 0;
 private:
 	D3DXMATRIX scaleObject();
 	D3DXMATRIX moveObject();

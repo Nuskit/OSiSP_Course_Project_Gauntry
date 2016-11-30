@@ -384,6 +384,7 @@
   <ItemGroup>
     <ClCompile Include="BaseState.cpp" />
     <ClCompile Include="Camera.cpp" />
+    <ClCompile Include="CameraController.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="DirectX_9.cpp" />
     <ClCompile Include="d3dUtility.cpp" />
@@ -398,7 +399,9 @@
     <ClCompile Include="MainApplication.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="ServiceManager.cpp" />
+    <ClCompile Include="ShortcutController.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TexturedGameObject.cpp" />
     <ClCompile Include="UILibrary.cpp" />
@@ -415,6 +418,7 @@
   <ItemGroup>
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Camera.h" />
+    <ClInclude Include="CameraController.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="DirectX_9.h" />
@@ -429,8 +433,10 @@
     <ClInclude Include="LoadStringFromResource.h" />
     <ClInclude Include="MainApplication.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ServiceManager.h" />
+    <ClInclude Include="ShortcutController.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TexturedGameObject.h" />
     <ClInclude Include="UILibrary.h" />

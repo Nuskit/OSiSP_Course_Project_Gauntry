@@ -10,4 +10,11 @@ protected:
 	virtual void enterInitialize() override;
 	virtual void enterReply() override;
 	virtual void exitInitialized() override;
+private:
+	void changeCameraPosition(WORD x, WORD y);
+	void handledClipCursosOnCenter();
+	void freeClipCursosOnCenter();
+	bool isHandled = false;
+	RECT oldRect;
+	POINT centerWindow;
 };

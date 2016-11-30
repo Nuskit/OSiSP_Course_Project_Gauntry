@@ -137,7 +137,7 @@ void Camera::walk(float units)
 }
 void Camera::strafe(float units)
 {
-	// Для наземных объектов перемещение только в плоскости xz
+	// Для наземных объектов перемещение только в плоскости yz
 	if (_cameraType == LANDOBJECT)
 		_pos += D3DXVECTOR3(_right.x, 0.0f, _right.z) * units;
 	if (_cameraType == AIRCRAFT)
@@ -156,7 +156,7 @@ Camera::Camera()
 		-1.0f, 0.0f, 0.0f, 0.0f,
 		0.0f, -1.0f, 0.0f, 0.0f,
 		0.0f, 0.0f, 1.0f, 0.0f,
-		-8000.0f, -500.0f, -8000.0f, 1.0f
+		0.0f, 0.0f, 0.0f, 1.0f
 	);
 
 	_cameraType = AIRCRAFT;
@@ -170,7 +170,7 @@ Camera::Camera(CameraType cameraType)
 		1.0f, 0.0f, 0.00f, 0.0f,
 		0.0f, 1.0f, 0.0f, 0.0f,
 		0.00f, 0.0f, 1.0f, 0.0f,
-		0.0f, -20.0f, 0.0f, 1.0f
+		0.0f, 0.0f, 0.0f, 1.0f
 	);
 
 	_cameraType = cameraType;

@@ -63,6 +63,7 @@ void GameObject::setView(const D3DXVECTOR3 & newView)
 
 void GameObject::update()
 {
+	updateCustom();
 }
 
 void GameObject::render(double lagTime)

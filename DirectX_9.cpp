@@ -85,6 +85,11 @@ const HRESULT DirectX_9::createDevice()
 	return S_OK;
 }
 
+void DirectX_9::setViewTransform(const D3DXMATRIX & viewMatrix)
+{
+	pGraphicD3DDevice->SetTransform(D3DTS_VIEW, &viewMatrix);
+}
+
 void DirectX_9::setMaterial(const D3DMATERIAL9 & material)
 {
 	pGraphicD3DDevice->SetMaterial(&material);

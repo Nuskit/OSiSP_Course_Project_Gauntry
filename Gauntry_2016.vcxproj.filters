@@ -79,6 +79,15 @@
     <ClCompile Include="LinkUIGameState.cpp">
       <Filter>States\BaseState</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraController.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="ShortcutController.cpp">
+      <Filter>ShortCuts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
@@ -168,6 +177,15 @@
     <ClInclude Include="LinkUIGameState.h">
       <Filter>States\BaseState</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraController.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="ShortcutController.h">
+      <Filter>ShortCuts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Infrastructure">
@@ -217,6 +235,9 @@
     </Filter>
     <Filter Include="States\BaseState">
       <UniqueIdentifier>{802e640d-99df-4301-81a3-a381d34e29d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ShortCuts">
+      <UniqueIdentifier>{f0139a85-0bbd-4761-be32-1e7f4c1ef2c5}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

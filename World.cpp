@@ -2,6 +2,12 @@
 #include "World.h"
 #include "GameObject.h"
 
+World::~World()
+{
+	for (auto object: gameObjects)
+		delete object;
+}
+
 void World::addObject(GameObject* gameObject)
 {
 	assert(gameObject != nullptr);

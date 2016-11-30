@@ -18,6 +18,7 @@ public:
 	virtual void setWorldTransform(const D3DXMATRIX & worldMatrix) override;
 	virtual void setMaterial(const D3DMATERIAL9 & material) override;
 	virtual void setTexture(const LPDIRECT3DTEXTURE9 & texture) override;
+	virtual void setViewTransform(const D3DXMATRIX & viewMatrix) override;
 private:
 	const HRESULT createDevice();
 

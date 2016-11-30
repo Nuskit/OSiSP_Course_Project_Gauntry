@@ -3,6 +3,7 @@
 #include "ServiceManager.h"
 #include "DirectX_9.h"
 
+#include "World.h"
 void InitServiceManager();
 
 INT WINAPI wWinMain(HINSTANCE hInst, HINSTANCE, LPWSTR, INT)

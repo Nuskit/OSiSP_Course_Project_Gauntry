@@ -30,6 +30,7 @@ public:
 	virtual void setMaterial(const D3DMATERIAL9& material) = 0;
 	//only v_9
 	virtual void setTexture(const LPDIRECT3DTEXTURE9& texture) = 0;
+	virtual void setViewTransform(const D3DXMATRIX& viewMatrix) = 0;
 	void changeState(GameLoopState* uiState);
 	virtual ~DirectX();
 	void initGameLoop();

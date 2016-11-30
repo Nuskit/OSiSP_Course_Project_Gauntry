@@ -93,7 +93,7 @@ windowHeight(height > 0 ? height : DEFAULT_WINDOW_HEIGHT), hWnd(createWindowObje
 bool MainWindow::workWindowLoop()
 {
 	InvalidateRect(hWnd, NULL, false);
-	UpdateWindow(hWnd);
+	//UpdateWindow(hWnd);
 	MSG msg;
 	ZeroMemory(&msg, sizeof(msg));
 	while (PeekMessage(&msg, NULL, 0U, 0U, PM_REMOVE))

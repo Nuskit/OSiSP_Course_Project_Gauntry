@@ -35,6 +35,16 @@ void ServiceManager::provide(World * world)
 	world_ = world;
 }
 
+void ServiceManager::provide(CameraController * camera)
+{
+	cameraController_ = camera;
+}
+
+void ServiceManager::provide(ShortcutController * shortcutController)
+{
+	shortcutController_ = shortcutController;
+}
+
 DirectX& ServiceManager::getDirectX()
 {
 	assert(directX_ != nullptr);
@@ -59,6 +69,19 @@ World & ServiceManager::getWorld()
 	return *world_;
 }
 
-ServiceManager::ServiceManager() :directX_(nullptr), windowInformation_(nullptr), uiState_(&uiStateNull), world_(nullptr)
+CameraController & ServiceManager::getCameraController()
+{
+	assert(cameraController_ != nullptr);
+	return *cameraController_;
+}
+
+ShortcutController & ServiceManager::getShortcutController()
+{
+	assert(shortcutController_ != nullptr);
+	return *shortcutController_;
+}
+
+ServiceManager::ServiceManager() :directX_(nullptr), windowInformation_(nullptr), uiState_(&uiStateNull), world_(nullptr),
+cameraController_(nullptr), shortcutController_(nullptr)
 {
 }
