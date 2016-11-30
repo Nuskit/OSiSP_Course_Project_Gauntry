@@ -4,6 +4,7 @@
 #include "WindowInfromation.h"
 #include "CameraController.h"
 #include "ShortcutController.h"
+#include "UILoopMainMenu.h"
 
 UILoopNewGame UILoopState::uiStateNewGame;
 
@@ -18,10 +19,13 @@ bool UILoopNewGame::MsgProc(MsgProcParam & msgProc)
 		freeClipCursosOnCenter();
 		break;
 	case WM_MOUSEMOVE:
-		changeCameraPosition(LOWORD(msgProc.lParam), HIWORD(msgProc.lParam));
+		if (isHandled)
+			changeCameraPosition(LOWORD(msgProc.lParam), HIWORD(msgProc.lParam));
 		break;
 	case WM_KEYDOWN:
-		if (!(msgProc.lParam & (1 << 30)))
+		if (msgProc.wParam == VK_ESCAPE)
+			getServiceManager().getWindowInformation().changeState(&UILoopState::uiStateMainMenu);
+		else if (!(msgProc.lParam & (1 << 30)))
 			getServiceManager().getShortcutController().downKey(msgProc.wParam);
 		break;
 	case WM_KEYUP:

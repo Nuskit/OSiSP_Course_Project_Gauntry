@@ -56,7 +56,7 @@ HWND MainWindow::createWindowObject()
 	RegisterClassEx(&wc);
 	// Create the application's window
 	return CreateWindow(LoadStringFromResourceW(ID_APPLICATION_MENU_NAME), LoadStringFromResourceW(ID_APPLICATION_NAME),
-		WS_OVERLAPPEDWINDOW, 0, 0, windowWidth, windowHeight, NULL, NULL, wc.hInstance, NULL);
+		WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU | WS_MINIMIZEBOX, 0, 0, windowWidth, windowHeight, NULL, NULL, wc.hInstance, NULL);
 }
 
 void MainWindow::changeState(UILoopState * uiState)

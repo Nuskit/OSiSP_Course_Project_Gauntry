@@ -47,8 +47,13 @@ void World::update()
 
 void World::render(double lagTime)
 {
-	static D3DXMATRIX I = { 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 };
-	terrain->draw(&I, false);
+	static D3DXMATRIX I = { 
+		1, 0, 0, 0, 
+		0, 1, 0, 0, 
+		0, 0, 1, 0, 
+		0, 0, 0, 1 
+	};
 	for (auto gameObject : gameObjects)
 		gameObject->render(lagTime);
+	terrain->draw(&I, false);
 }
