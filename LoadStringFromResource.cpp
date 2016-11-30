@@ -1,13 +1,24 @@
 #include "stdafx.h"
 #include "LoadStringFromResource.h"
 
-LoadStringFromResource::LoadStringFromResource(unsigned int idResource)
+LoadStringFromResourceW::LoadStringFromResourceW(unsigned int idResource)
 {
 	static HINSTANCE hInstance = GetModuleHandle(NULL);
-	LoadString(hInstance, idResource, buffer, LOAD_STRING_BUF_SIZE);
+	LoadStringW(hInstance, idResource, buffer, LOAD_STRING_BUF_SIZE);
 }
 
-LoadStringFromResource::operator LPCTSTR() const
+LoadStringFromResourceW::operator LPCTSTR() const
+{
+	return buffer;
+}
+
+LoadStringFromResourceA::LoadStringFromResourceA(unsigned int idResource)
+{
+	static HINSTANCE hInstance = GetModuleHandle(NULL);
+	LoadStringA(hInstance, idResource, buffer, LOAD_STRING_BUF_SIZE);
+}
+
+LoadStringFromResourceA::operator LPCSTR() const
 {
 	return buffer;
 }

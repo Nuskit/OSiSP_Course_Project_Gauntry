@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "ServiceManager.h"
 #include "UILoopNull.h"
-#include <stdexcept>
 
 UILoopNull ServiceManager::uiStateNull;
 
@@ -31,6 +30,11 @@ void ServiceManager::provide(UILoopState * uiState)
 	uiState_ = (uiState == nullptr) ? &uiStateNull : uiState;
 }
 
+void ServiceManager::provide(World * world)
+{
+	world_ = world;
+}
+
 DirectX& ServiceManager::getDirectX()
 {
 	assert(directX_ != nullptr);
@@ -49,6 +53,12 @@ UILoopState& ServiceManager::getUIState()
 	return *uiState_;
 }
 
-ServiceManager::ServiceManager():directX_(nullptr), windowInformation_(nullptr), uiState_(&uiStateNull)
+World & ServiceManager::getWorld()
+{
+	assert(world_ != nullptr);
+	return *world_;
+}
+
+ServiceManager::ServiceManager() :directX_(nullptr), windowInformation_(nullptr), uiState_(&uiStateNull), world_(nullptr)
 {
 }

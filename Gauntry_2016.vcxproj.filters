@@ -52,20 +52,32 @@
     <ClCompile Include="GameLoopState.cpp">
       <Filter>States\GameLoopStates</Filter>
     </ClCompile>
-    <ClCompile Include="BaseState.cpp">
-      <Filter>States</Filter>
-    </ClCompile>
     <ClCompile Include="GameLoopMainMenu.cpp">
       <Filter>States\GameLoopStates</Filter>
-    </ClCompile>
-    <ClCompile Include="LinkUIGameState.cpp">
-      <Filter>States</Filter>
     </ClCompile>
     <ClCompile Include="GameLoopNewGame.cpp">
       <Filter>States\GameLoopStates</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="TexturedGameObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectTexture.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="World.cpp">
+      <Filter>GameWorld</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseState.cpp">
+      <Filter>States\BaseState</Filter>
+    </ClCompile>
+    <ClCompile Include="LinkUIGameState.cpp">
+      <Filter>States\BaseState</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -102,9 +114,6 @@
     <ClInclude Include="WindowInfromation.h">
       <Filter>Services\Interfaces</Filter>
     </ClInclude>
-    <ClInclude Include="BaseState.h">
-      <Filter>States</Filter>
-    </ClInclude>
     <ClInclude Include="UILoopState.h">
       <Filter>States\UIStates</Filter>
     </ClInclude>
@@ -135,14 +144,29 @@
     <ClInclude Include="GameLoopMainMenu.h">
       <Filter>States\GameLoopStates</Filter>
     </ClInclude>
-    <ClInclude Include="LinkUIGameState.h">
-      <Filter>States</Filter>
-    </ClInclude>
     <ClInclude Include="GameLoopNewGame.h">
       <Filter>States\GameLoopStates</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="TexturedGameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectTexture.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="World.h">
+      <Filter>GameWorld</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>States\BaseState</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkUIGameState.h">
+      <Filter>States\BaseState</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -184,6 +208,15 @@
     </Filter>
     <Filter Include="Camera">
       <UniqueIdentifier>{b3ad51ec-dce9-4573-ae27-456654b852a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{ecde5792-7189-4a9a-b3a8-395eb4255222}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameWorld">
+      <UniqueIdentifier>{dc69c9be-8692-491d-a0f0-d1c3fcc94f07}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="States\BaseState">
+      <UniqueIdentifier>{802e640d-99df-4301-81a3-a381d34e29d3}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

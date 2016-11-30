@@ -51,11 +51,11 @@ HWND MainWindow::createWindowObject()
 	{
 		sizeof(WNDCLASSEX), CS_CLASSDC, MainWindow::MsgProc, 0L, 0L,
 		GetModuleHandle(NULL), NULL, NULL, NULL, NULL,
-		LoadStringFromResource(ID_APPLICATION_MENU_NAME), NULL
+		LoadStringFromResourceW(ID_APPLICATION_MENU_NAME), NULL
 	};
 	RegisterClassEx(&wc);
 	// Create the application's window
-	return CreateWindow(LoadStringFromResource(ID_APPLICATION_MENU_NAME), LoadStringFromResource(ID_APPLICATION_NAME),
+	return CreateWindow(LoadStringFromResourceW(ID_APPLICATION_MENU_NAME), LoadStringFromResourceW(ID_APPLICATION_NAME),
 		WS_OVERLAPPEDWINDOW, 0, 0, windowWidth, windowHeight, NULL, NULL, wc.hInstance, NULL);
 }
 
@@ -124,5 +124,5 @@ MainWindow::~MainWindow()
 {
 	uiState_->exit();
 	//delete uiState_;
-	UnregisterClass(LoadStringFromResource(ID_APPLICATION_NAME), wc.hInstance);
+	UnregisterClass(LoadStringFromResourceW(ID_APPLICATION_NAME), wc.hInstance);
 }

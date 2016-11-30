@@ -13,6 +13,11 @@ public:
 	virtual bool startRender() override;
 	virtual void endRender() override;
 	virtual void postRender() override;
+	virtual bool loadMeshFromX(LPCWSTR pFilename, MeshFromX& loadedMesh, DWORD Options = D3DXMESH_MANAGED) override;
+	virtual HRESULT createTextureFromFile(LPCSTR pSrcFile, LPDIRECT3DTEXTURE9 & pTexture) override;
+	virtual void setWorldTransform(const D3DXMATRIX & worldMatrix) override;
+	virtual void setMaterial(const D3DMATERIAL9 & material) override;
+	virtual void setTexture(const LPDIRECT3DTEXTURE9 & texture) override;
 private:
 	const HRESULT createDevice();
 

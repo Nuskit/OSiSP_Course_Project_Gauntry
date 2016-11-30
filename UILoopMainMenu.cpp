@@ -26,7 +26,7 @@ void UILoopMainMenu::enterReply()
 HWND UILoopMainMenu::createMenuButton(int idResourceButton, int indexNumber)
 {
 	WindowInformation& windowInfromation = getServiceManager().getWindowInformation();
-	HWND button = CreateButton(windowInfromation.getHWND(), LoadStringFromResource(idResourceButton), idResourceButton,
+	HWND button = CreateButton(windowInfromation.getHWND(), LoadStringFromResourceW(idResourceButton), idResourceButton,
 		windowInfromation.getWidth() / 3, windowInfromation.getHeight() / 3 + HEIGHT_BUTTON*indexNumber);
 	assert(button != NULL);
 	return button;

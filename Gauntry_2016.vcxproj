@@ -391,6 +391,8 @@
     <ClCompile Include="GameLoopMainMenu.cpp" />
     <ClCompile Include="GameLoopNewGame.cpp" />
     <ClCompile Include="GameLoopState.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="GameObjectTexture.cpp" />
     <ClCompile Include="LinkUIGameState.cpp" />
     <ClCompile Include="LoadStringFromResource.cpp" />
     <ClCompile Include="MainApplication.cpp" />
@@ -398,12 +400,14 @@
     <ClCompile Include="MainWindow.cpp" />
     <ClCompile Include="ServiceManager.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="TexturedGameObject.cpp" />
     <ClCompile Include="UILibrary.cpp" />
     <ClCompile Include="UILoopInitialize.cpp" />
     <ClCompile Include="UILoopMainMenu.cpp" />
     <ClCompile Include="UILoopNewGame.cpp" />
     <ClCompile Include="UILoopNull.cpp" />
     <ClCompile Include="UILoopOptions.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc" />
@@ -419,6 +423,8 @@
     <ClInclude Include="GameLoopNewGame.h" />
     <ClInclude Include="GameLoopState.h" />
     <ClInclude Include="GameLoopInitialize.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="GameObjectTexture.h" />
     <ClInclude Include="LinkUIGameState.h" />
     <ClInclude Include="LoadStringFromResource.h" />
     <ClInclude Include="MainApplication.h" />
@@ -426,6 +432,7 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="ServiceManager.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TexturedGameObject.h" />
     <ClInclude Include="UILibrary.h" />
     <ClInclude Include="UILoopInitialize.h" />
     <ClInclude Include="UILoopMainMenu.h" />
@@ -434,6 +441,7 @@
     <ClInclude Include="UILoopOptions.h" />
     <ClInclude Include="UILoopState.h" />
     <ClInclude Include="WindowInfromation.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

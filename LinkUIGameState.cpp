@@ -14,7 +14,7 @@ GameLoopState* GetLinkUiToGameStates(UILoopState* uiState)
 	{
 		{reinterpret_cast<UILoopState*>(&UILoopState::uiStateInitialize),reinterpret_cast<GameLoopState*>(&GameLoopState::gameStateInitialize)},
 		{reinterpret_cast<UILoopState*>(&UILoopState::uiStateMainMenu),reinterpret_cast<GameLoopState*>(&GameLoopState::gameStateMainMenu)},
-		{reinterpret_cast<UILoopState*>(&UILoopState::uiStateNewGame),reinterpret_cast<GameLoopState*>(&GameLoopState::gameStateMainMenu)}
+		{reinterpret_cast<UILoopState*>(&UILoopState::uiStateNewGame),reinterpret_cast<GameLoopState*>(&GameLoopState::gameStateNewGame)}
 	};
 
 	MapUiGameStates::const_iterator gameStateIt = links.find(uiState);

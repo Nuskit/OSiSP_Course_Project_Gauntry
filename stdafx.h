@@ -6,6 +6,8 @@
 #include <d3dx9core.h>
 #include <d3d9.h>
 #include <vector>
+#include <list>
 #ifdef DEBUG
 #include <cassert>
 #endif
+#include <stdexcept>

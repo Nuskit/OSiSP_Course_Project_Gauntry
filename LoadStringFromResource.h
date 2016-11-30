@@ -4,11 +4,20 @@
 #define LOAD_STRING_BUF_SIZE 100
 
 //not thread safe
-class LoadStringFromResource
+class LoadStringFromResourceW
 {
 public:
-	LoadStringFromResource(unsigned int idResource);
+	LoadStringFromResourceW(unsigned int idResource);
 	operator LPCTSTR() const;
 private:
 	TCHAR buffer[LOAD_STRING_BUF_SIZE];
+};
+
+class LoadStringFromResourceA
+{
+public:
+	LoadStringFromResourceA(unsigned int idResource);
+	operator LPCSTR() const;
+private:
+	CHAR buffer[LOAD_STRING_BUF_SIZE];
 };

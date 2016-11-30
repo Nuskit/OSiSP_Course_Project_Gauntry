@@ -85,6 +85,26 @@ const HRESULT DirectX_9::createDevice()
 	return S_OK;
 }
 
+void DirectX_9::setMaterial(const D3DMATERIAL9 & material)
+{
+	pGraphicD3DDevice->SetMaterial(&material);
+}
+
+void DirectX_9::setTexture(const LPDIRECT3DTEXTURE9 & texture)
+{
+	pGraphicD3DDevice->SetTexture(0, texture);
+}
+
+void DirectX_9::setWorldTransform(const D3DXMATRIX & worldMatrix)
+{
+	pGraphicD3DDevice->SetTransform(D3DTS_WORLD, &worldMatrix);
+}
+
+HRESULT DirectX_9::createTextureFromFile(LPCSTR pSrcFile, LPDIRECT3DTEXTURE9 & pTexture)
+{
+	return D3DXCreateTextureFromFileA(pGraphicD3DDevice, pSrcFile, &pTexture);
+}
+
 void DirectX_9::preRender()
 {
 	// Clear the backbuffer to a blue color
@@ -105,6 +125,15 @@ void DirectX_9::postRender()
 {
 	// Present the backbuffer contents to the display
 	pGraphicD3DDevice->Present(NULL, NULL, NULL, NULL);
+}
+
+bool DirectX_9::loadMeshFromX(LPCWSTR pFilename, MeshFromX& loadedMesh, DWORD Options)
+{
+	return (SUCCEEDED(D3DXLoadMeshFromX(
+		pFilename, Options, pGraphicD3DDevice, &loadedMesh.pAdjacency,
+		&loadedMesh.pMaterials, &loadedMesh.pEffectInstances,
+		&loadedMesh.NumMaterials, &loadedMesh.pMesh))
+		);
 }
 
 void DirectX_9::clearUp()
