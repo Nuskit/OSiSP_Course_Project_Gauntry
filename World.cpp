@@ -26,14 +26,14 @@
 #define MAX_TIMER_VALUE 2*M_PI
 #define SCALE_CHAIR 2.f
 #define SCALE_ACROPOLIS_GROUND 1.f
-#define SCALE_AIRPLANE 1.f
-#define SCALE_SATELLITE 1.f
-#define SCALE_DWARF 10.f
+#define SCALE_AIRPLANE 6.f
+#define SCALE_SATELLITE 3.f
+#define SCALE_DWARF 20.f
 #define SCALE_NLO 1.f
-#define SCALE_ATTACKED_GYRO 1.f
-#define SCALE_GYRO 1.f
-#define SCALE_EVIL_DRONE 1.f
-#define SCALE_CAR 0.5f
+#define SCALE_ATTACKED_GYRO 3.055f
+#define SCALE_GYRO 3.5f
+#define SCALE_EVIL_DRONE 3.f
+#define SCALE_CAR 0.05f
 
 World::World() :lightTimer(-M_PI)
 {
@@ -143,39 +143,39 @@ void World::createDwarf()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_DWARF), LoadStringFromResourceA(IDS_TEXTURE_DWARF_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new Dwarf(D3DXVECTOR3(SCALE_DWARF, SCALE_DWARF, SCALE_DWARF), D3DXVECTOR3(-260.f, 0.f, -280.f),
-		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
+	addObject(new Dwarf(D3DXVECTOR3(SCALE_DWARF, SCALE_DWARF, SCALE_DWARF), D3DXVECTOR3(-325.f, 15.f, -105.f),
+		D3DXVECTOR3(M_PI, M_PI, 0.f), gameObject));
 }
 
 void World::createNlo()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_NLO), LoadStringFromResourceA(IDS_TEXTURE_NLO_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new Nlo(D3DXVECTOR3(SCALE_NLO, SCALE_NLO, SCALE_NLO), D3DXVECTOR3(-260.f, 0.f, -280.f),
-		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
+	addObject(new Nlo(D3DXVECTOR3(SCALE_NLO, SCALE_NLO, SCALE_NLO), D3DXVECTOR3(0.f, -350.f, 0.f),
+		D3DXVECTOR3(0.f, 0.f, 0.f), gameObject));
 }
 
 void World::createCar()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_CAR), LoadStringFromResourceA(IDS_TEXTURE_CAR_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new Car(D3DXVECTOR3(SCALE_CAR, SCALE_CAR, SCALE_CAR), D3DXVECTOR3(-260.f, 0.f, -280.f),
-		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
+	addObject(new Car(D3DXVECTOR3(SCALE_CAR, SCALE_CAR, SCALE_CAR), D3DXVECTOR3(0.f, -300.f, 0.f),
+		D3DXVECTOR3(M_PI_2, M_PI, 0.f), gameObject));
 }
 
 void World::createEvilDrone()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_EVIL_DRONE), LoadStringFromResourceA(IDS_TEXTURE_EVIL_DRONE_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new EvilDrone(D3DXVECTOR3(SCALE_EVIL_DRONE, SCALE_EVIL_DRONE, SCALE_EVIL_DRONE), D3DXVECTOR3(-260.f, 0.f, -280.f),
-		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
+	addObject(new EvilDrone(D3DXVECTOR3(SCALE_EVIL_DRONE, SCALE_EVIL_DRONE, SCALE_EVIL_DRONE), D3DXVECTOR3(-350.f, -20.f, -350.f),
+		D3DXVECTOR3(0.f, 0.f, 0.f), gameObject));
 }
 
 void World::createGyro()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_GYRO), LoadStringFromResourceA(IDS_TEXTURE_GYRO_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new Gyro(D3DXVECTOR3(SCALE_GYRO, SCALE_GYRO, SCALE_GYRO), D3DXVECTOR3(-260.f, 0.f, -280.f),
+	addObject(new Gyro(D3DXVECTOR3(SCALE_GYRO, SCALE_GYRO, SCALE_GYRO), D3DXVECTOR3(-245.f, -125.f, -350.f),
 		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
 }
 
@@ -183,14 +183,15 @@ void World::createAttackedGyro()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_ATTACKED_GYRO), LoadStringFromResourceA(IDS_TEXTURE_ATTACKED_GYRO_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new AttackedGyro(D3DXVECTOR3(SCALE_ATTACKED_GYRO, SCALE_ATTACKED_GYRO, SCALE_ATTACKED_GYRO), D3DXVECTOR3(-260.f, 0.f, -280.f),
-		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
+	addObject(new AttackedGyro(D3DXVECTOR3(SCALE_ATTACKED_GYRO, SCALE_ATTACKED_GYRO, SCALE_ATTACKED_GYRO), D3DXVECTOR3(0.f, 0.f, 0.f),
+		D3DXVECTOR3(0.f, 0.f, 0.f), gameObject));
 }
 
 void World::createAirplane()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_AIRPLANE), LoadStringFromResourceA(IDS_TEXTURE_AIRPLANE_FOLDER));
-	addObject(new Airplane(D3DXVECTOR3(SCALE_AIRPLANE, SCALE_AIRPLANE, SCALE_AIRPLANE), D3DXVECTOR3(-260.f, 0.f, -280.f),
+	texturedObjects.push_back(gameObject);
+	addObject(new Airplane(D3DXVECTOR3(SCALE_AIRPLANE, SCALE_AIRPLANE, SCALE_AIRPLANE), D3DXVECTOR3(0.f, -200.f, -200.f),
 		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
 }
 
@@ -198,6 +199,6 @@ void World::createSatellite()
 {
 	TexturedGameObject* gameObject = new TexturedGameObject(LoadStringFromResourceW(IDS_TEXTURE_SATELLITE), LoadStringFromResourceA(IDS_TEXTURE_SATELLITE_FOLDER));
 	texturedObjects.push_back(gameObject);
-	addObject(new Satellite(D3DXVECTOR3(SCALE_SATELLITE, SCALE_SATELLITE, SCALE_SATELLITE), D3DXVECTOR3(-260.f, 0.f, -280.f),
+	addObject(new Satellite(D3DXVECTOR3(SCALE_SATELLITE, SCALE_SATELLITE, SCALE_SATELLITE), D3DXVECTOR3(-270.f, -400.f, -140.f),
 		D3DXVECTOR3(0.f, M_PI, 0.f), gameObject));
 }

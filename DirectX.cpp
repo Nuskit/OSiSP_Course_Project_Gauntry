@@ -45,11 +45,18 @@ void DirectX::stepGameLoop()
 	gameLoop_->render(static_cast<double>(lag) / MS_PER_UPDATE);
 }
 
+void DirectX::changeSpeed(bool isUp)
+{
+	static bool isUp_ = false;
+	speed *= isUp&(!isUp_) ? 1.25 : 0.8;
+	isUp_ = isUp;
+}
+
 void DirectX::updateGame()
 {
-	while (lag >= MS_PER_UPDATE)
+	while (lag >= MS_PER_UPDATE*speed)
 	{
 		gameLoop_->update();
-		lag -= MS_PER_UPDATE;
+		lag -= MS_PER_UPDATE*speed;
 	}
 }

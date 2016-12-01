@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-#define MOVE_DELTA 10.0f
+#define MOVE_DELTA 5.0f
 #define MOUSE_SENSITIVITY 0.1f
 
 class GameObject

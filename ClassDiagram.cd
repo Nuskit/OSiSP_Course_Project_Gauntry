@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="LoadStringFromResourceW" Collapsed="true">
+    <Position X="35.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>LoadStringFromResource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LoadStringFromResourceA" Collapsed="true">
+    <Position X="33.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>LoadStringFromResource.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirectX_9" Collapsed="true">
+    <Position X="3.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIAAABgAAAEEAAiAAAEAgDAAQAAAIgAAAAQUIAECA=</HashCode>
+      <FileName>DirectX_9.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DirectX" Collapsed="true">
+    <Position X="3.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIIIAABAACAA0AAgAYIEAkDAAQAAAMgAAAgQQIAECA=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WindowInformation" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QACAAAAAAAAAAAAAAgQAAAAEAAAAQAAAAAAACAAAAAA=</HashCode>
+      <FileName>WindowInfromation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ServiceManager" Collapsed="true">
+    <Position X="38.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAkAAAAAAEAAQAAAAAAAgBABAAIJUAAAAECIAQAAA=</HashCode>
+      <FileName>ServiceManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainApplication" Collapsed="true">
+    <Position X="37" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAMAAAAAAAAQAAAAAAgAAAAAAAAAAAgABAAAAAAAA=</HashCode>
+      <FileName>MainApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MainWindow" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAABAAAAAAAAAAIAAgQEIAAAAAAAQAQAAIAAQQAAAIA=</HashCode>
+      <FileName>MainWindow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameLoopMainMenu" Collapsed="true">
+    <Position X="3.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAAAAAAAACAAgAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>GameLoopMainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameLoopNewGame" Collapsed="true">
+    <Position X="5.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAAAAAAAACAAgAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>GameLoopNewGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameLoopState" Collapsed="true">
+    <Position X="3.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAgAAAAAACAAgAAAAAAAAAAAAAAUCAA=</HashCode>
+      <FileName>GameLoopState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameLoopInitialize" Collapsed="true">
+    <Position X="1.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BACABAAACAAAAAAAAAAAACAAgAAAAAAAAAAAAAAEAAA=</HashCode>
+      <FileName>GameLoopInitialize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopInitialize" Collapsed="true">
+    <Position X="8" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQABAAACAAAAAAAAQAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>UILoopInitialize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopMainMenu" Collapsed="true">
+    <Position X="10.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAAAIAgAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>UILoopMainMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopNewGame" Collapsed="true">
+    <Position X="12.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAEAAEAAAAAwAAEAAAAAAIAAgAAAAAA=</HashCode>
+      <FileName>UILoopNewGame.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopNull" Collapsed="true">
+    <Position X="14.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>UILoopNull.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopOptions" Collapsed="true">
+    <Position X="17" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAACAAAAAAAIAgAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>UILoopOptions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UILoopState" Collapsed="true">
+    <Position X="12.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAKAJAAAAAAA=</HashCode>
+      <FileName>UILoopState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BaseState" Collapsed="true">
+    <Position X="9" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAABAAQCAAAAAAAAAQAAQAAAAAAAAAgBAAAACAAAAA=</HashCode>
+      <FileName>BaseState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="33.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQACIAAAgQAAAAQAQgBJAAAiAAAAAUAggCIAAAAQQQA=</HashCode>
+      <FileName>Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraController" Collapsed="true">
+    <Position X="35.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAIAIAAIAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CameraController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="16.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAsgCAAAAAQAAAACAAgQACADAgACECAAYAAAIUAAA=</HashCode>
+      <FileName>GameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObjectTexture" Collapsed="true">
+    <Position X="37" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAAEAAAEAAIAAAAAUAAAAAAAAAAAAAAAAAAABEAAA=</HashCode>
+      <FileName>GameObjectTexture.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="26.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACQAgAAAAAAAAAAAAAAAAQAAABA=</HashCode>
+      <FileName>Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TexturedGameObject" Collapsed="true">
+    <Position X="1.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AkAAAAAAAAAAAAAAACAAgAAAAACAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>TexturedGameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="World" Collapsed="true">
+    <Position X="37" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAQAAAAAIBCIFAAQIAAEAiDwAAACABEAAAAAAABUAAA=</HashCode>
+      <FileName>World.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Terrain" Collapsed="true">
+    <Position X="35.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAIAEACBCQAEkAAAEJAgBAAABAEwAKIhEQAAAAAAAE=</HashCode>
+      <FileName>Terrain.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ShortcutController" Collapsed="true">
+    <Position X="33.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAoAAAAAAAAAACAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ShortcutController.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Light" Collapsed="true">
+    <Position X="38.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Light.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SkyBox" Collapsed="true">
+    <Position X="22" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAAAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>GameSkyBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Acropolis" Collapsed="true">
+    <Position X="28.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAABAAEA=</HashCode>
+      <FileName>Acropolis.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Chair" Collapsed="true">
+    <Position X="4" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Chair.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AcropolisGround" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAABAABA=</HashCode>
+      <FileName>AcropolisGround.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Dwarf" Collapsed="true">
+    <Position X="13" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Dwarf.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nlo" Collapsed="true">
+    <Position X="17.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAEAAABAAAA=</HashCode>
+      <FileName>Nlo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Car" Collapsed="true">
+    <Position X="19.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Car.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EvilDrone" Collapsed="true">
+    <Position X="24.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>EvilDrone.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Gyro" Collapsed="true">
+    <Position X="31" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAIBAAAA=</HashCode>
+      <FileName>Gyro.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AttackedGyro" Collapsed="true">
+    <Position X="6.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAACAAgAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>AttackedGyro.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Airplane" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAAAAAAAAACAAAABAAAA=</HashCode>
+      <FileName>Airplane.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Satellite" Collapsed="true">
+    <Position X="15.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAgAAAAABAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Satellite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="_MeshFromX" Collapsed="true">
+    <Position X="7.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAABAAAAAAAAABAAAAAAAAAAAAAIBAAAAAAA=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::BoundingBox" Collapsed="true">
+    <Position X="33.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAAAAAAAAAAAAAAACAAAAAAEABAAAAAAAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::BoundingSphere" Collapsed="true">
+    <Position X="35.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="d3d::Vertex" Collapsed="true">
+    <Position X="37" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAQBAAAAAAAAAAAAAAAAAAAAhAAAAACAYAA=</HashCode>
+      <FileName>d3dUtility.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="MeshFromX" Collapsed="true">
+    <Position X="7.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DirectX.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="MapUiGameStates" Collapsed="true">
+    <Position X="33.5" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>LinkUIGameState.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Enum Name="__unnamed_enum_011e_1" Collapsed="true">
+    <Position X="33.5" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.cpp</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -6,7 +6,7 @@
 
 #define VISION_ANGLE (D3DX_PI / 4)
 #define CLIPPING_NEAR 1.0f
-#define CLIPPING_FAR 10000.0f
+#define CLIPPING_FAR 5000.0f
 
 GameLoopInitialize  GameLoopState::gameStateInitialize;
 

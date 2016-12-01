@@ -379,6 +379,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="ClassDiagram.cd" />
     <None Include="directx.ico" />
   </ItemGroup>
   <ItemGroup>

@@ -42,6 +42,7 @@ public:
 	virtual ~DirectX();
 	void initGameLoop();
 	void stepGameLoop();
+	void changeSpeed(bool isUp);
 private:
 	DirectX(const DirectX&);
 	DirectX& operator=(const DirectX&);
@@ -50,4 +51,5 @@ private:
 	GameLoopState *gameLoop_;
 	DWORD previous;
 	DWORD lag;
+	double speed = 1;
 };

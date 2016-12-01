@@ -11,7 +11,6 @@
 
 Player::Player():camera_(new Camera())
 {
-
 }
 
 Player::~Player()
@@ -32,7 +31,7 @@ void Player::renderCustom(double lagTime)
 
 	flashLight.Position = position;
 	flashLight.Direction = look;
-	flashLight.Range = 200;
+	flashLight.Range = 150;
 	flashLight.Theta = 0.5;
 	flashLight.Phi = 1;
 
@@ -74,6 +73,12 @@ void Player::updateCustom()
 			break;
 		case (VK_RIGHT):
 			camera_->yaw(MOUSE_SENSITIVITY);
+			break;
+		case (VK_OEM_PLUS):
+			getServiceManager().getDirectX().changeSpeed(true);
+			break;
+		case (VK_OEM_MINUS):
+			getServiceManager().getDirectX().changeSpeed(false);
 			break;
 		}
 }

@@ -153,9 +153,9 @@ void Camera::fly(float units)
 Camera::Camera()
 {
 	V = new D3DXMATRIX(
-		-1.0f, 0.0f, 0.0f, 0.0f,
+		-1.0f, 0.0f, 0.0f, -400.0f,
 		0.0f, -1.0f, 0.0f, 0.0f,
-		0.0f, 0.0f, 1.0f, 0.0f,
+		0.0f, 0.0f, 1.0f, -400.0f,
 		0.0f, 0.0f, 0.0f, 1.0f
 	);
 

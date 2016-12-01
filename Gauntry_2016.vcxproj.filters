@@ -342,5 +342,6 @@
     <None Include="directx.ico">
       <Filter>Resources</Filter>
     </None>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
