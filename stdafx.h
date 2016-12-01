@@ -14,3 +14,4 @@
 #endif
 #include <stdexcept>
 #include <cmath>
+#include <memory>

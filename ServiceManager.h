@@ -12,6 +12,7 @@ class ServiceManager
 {
 public:
 	static ServiceManager& getInstance();
+	~ServiceManager();
 	void provide(DirectX* directX);
 	void provide(WindowInformation* windowInformation);
 	void provide(UILoopState* uiState);

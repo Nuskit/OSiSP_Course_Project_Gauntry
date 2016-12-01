@@ -2,6 +2,7 @@
 #include "stdafx.h"
 
 class GameObject;
+class TexturedGameObject;
 class Terrain;
 class World
 {
@@ -14,11 +15,23 @@ public:
 	void render(double lagTime);
 private:
 	std::list<GameObject*> gameObjects;
+	std::vector<TexturedGameObject*> texturedObjects;
 	Terrain *terrain;
 
 	//TODO: insert in module entities
 private:
-	GameObject* createChair();
+	void createChair();
 	void createSkyBox();
-	GameObject* createArcopolis();
+	void createArcopolis();
+	void createAcropolisGround();
+	void createDwarf();
+	void createNlo();
+	void createCar();
+	void createEvilDrone();
+	void createGyro();
+	void createAttackedGyro();
+	void createAirplane();
+	void createSatellite();
+	D3DXVECTOR3 lightDirection;
+	float lightTimer;
 };

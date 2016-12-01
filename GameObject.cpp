@@ -3,8 +3,7 @@
 #include "ServiceManager.h"
 #include "DirectX.h"
 
-GameObject::GameObject(D3DXVECTOR3 scale, D3DXVECTOR3 position, D3DXVECTOR3 view, GameObject* parent) :
-	scaleMatrix_(scale), positionMatrix_(position), viewMatrix_(view), parent_(parent)
+GameObject::GameObject(D3DXVECTOR3 scale, D3DXVECTOR3 position, D3DXVECTOR3 view, GameObject* parent) : parent_(parent)
 {
 	D3DXMatrixTranslation(&positionMatrix_, position.x, position.y, position.z);
 	D3DXMatrixScaling(&scaleMatrix_, scale.x, scale.y, scale.z);
@@ -77,7 +76,7 @@ void GameObject::render(double lagTime)
 
 void GameObject::setObjectPosition()
 {
-	getServiceManager().getDirectX().setWorldTransform(getScale()*getPosition()*getView());
+	getServiceManager().getDirectX().setWorldTransform(getScale()*getView()*getPosition());
 }
 
 void GameObject::addChildObject(GameObject & childObject)

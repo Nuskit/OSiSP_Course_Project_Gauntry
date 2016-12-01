@@ -33,6 +33,23 @@ void GameObjectTexture::drawTexture()
 
 GameObjectTexture::~GameObjectTexture()
 {
+	for (DWORD i = 0; i < meshX->NumMaterials; ++i)
+		d3d::Release<LPDIRECT3DTEXTURE9>(textures[i]);
+
+
+	typedef struct _MeshFromX
+	{
+		LPD3DXBUFFER pAdjacency;
+		LPD3DXBUFFER pMaterials;
+		LPD3DXBUFFER pEffectInstances;
+		DWORD NumMaterials;
+		LPD3DXMESH pMesh;
+	}MeshFromX;
+
+	d3d::Release<LPD3DXBUFFER>(meshX->pAdjacency);
+	d3d::Release<LPD3DXBUFFER>(meshX->pEffectInstances);
+	d3d::Release<LPD3DXMESH>(meshX->pMesh);
+
 	delete meshX;
 	delete[] textures;
 	delete[] materials;

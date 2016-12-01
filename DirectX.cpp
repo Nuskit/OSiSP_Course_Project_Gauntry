@@ -22,7 +22,6 @@ DirectX::~DirectX()
 {
 	if (gameLoop_)
 		gameLoop_->exit();
-	delete gameLoop_;
 }
 
 void DirectX::initGameLoop()

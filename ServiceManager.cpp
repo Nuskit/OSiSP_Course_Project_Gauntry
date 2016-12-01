@@ -2,6 +2,10 @@
 #include "ServiceManager.h"
 #include "UILoopNull.h"
 
+#include "DirectX.h"
+#include "WindowInfromation.h"
+#include "World.h"
+
 UILoopNull ServiceManager::uiStateNull;
 
 ServiceManager& getServiceManager()
@@ -13,6 +17,13 @@ ServiceManager& ServiceManager::getInstance()
 {
 	static ServiceManager serviceManager;
 	return serviceManager;
+}
+
+ServiceManager::~ServiceManager()
+{
+	delete directX_;
+	delete windowInformation_;
+	delete world_;
 }
 
 void ServiceManager::provide(DirectX * directX)

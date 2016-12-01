@@ -97,6 +97,39 @@
     <ClCompile Include="GameSkyBox.cpp">
       <Filter>Entities</Filter>
     </ClCompile>
+    <ClCompile Include="Acropolis.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Chair.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="AcropolisGround.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Dwarf.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Nlo.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Car.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="EvilDrone.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Gyro.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="AttackedGyro.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Airplane.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Satellite.cpp">
+      <Filter>Entities</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DirectX.h">
@@ -202,6 +235,39 @@
       <Filter>Light</Filter>
     </ClInclude>
     <ClInclude Include="GameSkyBox.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Acropolis.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Chair.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="AcropolisGround.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Dwarf.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Nlo.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Car.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="EvilDrone.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Gyro.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="AttackedGyro.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Airplane.h">
+      <Filter>Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Satellite.h">
       <Filter>Entities</Filter>
     </ClInclude>
   </ItemGroup>

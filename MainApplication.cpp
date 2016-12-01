@@ -16,6 +16,7 @@ MainApplication::~MainApplication()
 {
 	getServiceManager().getDirectX().clearUp();
 	delete mainWindow_;
+	getServiceManager().provide((MainWindow*)(nullptr));
 }
 
 HRESULT MainApplication::initApplication()

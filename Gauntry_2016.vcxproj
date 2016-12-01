@@ -382,12 +382,20 @@
     <None Include="directx.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Acropolis.cpp" />
+    <ClCompile Include="AcropolisGround.cpp" />
+    <ClCompile Include="Airplane.cpp" />
+    <ClCompile Include="AttackedGyro.cpp" />
     <ClCompile Include="BaseState.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraController.cpp" />
+    <ClCompile Include="Car.cpp" />
+    <ClCompile Include="Chair.cpp" />
     <ClCompile Include="DirectX.cpp" />
     <ClCompile Include="DirectX_9.cpp" />
     <ClCompile Include="d3dUtility.cpp" />
+    <ClCompile Include="Dwarf.cpp" />
+    <ClCompile Include="EvilDrone.cpp" />
     <ClCompile Include="GameLoopInitialize.cpp" />
     <ClCompile Include="GameLoopMainMenu.cpp" />
     <ClCompile Include="GameLoopNewGame.cpp" />
@@ -395,13 +403,16 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectTexture.cpp" />
     <ClCompile Include="GameSkyBox.cpp" />
+    <ClCompile Include="Gyro.cpp" />
     <ClCompile Include="Light.cpp" />
     <ClCompile Include="LinkUIGameState.cpp" />
     <ClCompile Include="LoadStringFromResource.cpp" />
     <ClCompile Include="MainApplication.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="Nlo.cpp" />
     <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Satellite.cpp" />
     <ClCompile Include="ServiceManager.cpp" />
     <ClCompile Include="ShortcutController.cpp" />
     <ClCompile Include="stdafx.cpp" />
@@ -419,13 +430,21 @@
     <ResourceCompile Include="Resource.rc" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Acropolis.h" />
+    <ClInclude Include="AcropolisGround.h" />
+    <ClInclude Include="Airplane.h" />
+    <ClInclude Include="AttackedGyro.h" />
     <ClInclude Include="BaseState.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraController.h" />
+    <ClInclude Include="Car.h" />
+    <ClInclude Include="Chair.h" />
     <ClInclude Include="Defines.h" />
     <ClInclude Include="DirectX.h" />
     <ClInclude Include="DirectX_9.h" />
     <ClInclude Include="d3dUtility.h" />
+    <ClInclude Include="Dwarf.h" />
+    <ClInclude Include="EvilDrone.h" />
     <ClInclude Include="GameLoopMainMenu.h" />
     <ClInclude Include="GameLoopNewGame.h" />
     <ClInclude Include="GameLoopState.h" />
@@ -433,13 +452,16 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectTexture.h" />
     <ClInclude Include="GameSkyBox.h" />
+    <ClInclude Include="Gyro.h" />
     <ClInclude Include="Light.h" />
     <ClInclude Include="LinkUIGameState.h" />
     <ClInclude Include="LoadStringFromResource.h" />
     <ClInclude Include="MainApplication.h" />
     <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="Nlo.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="Satellite.h" />
     <ClInclude Include="ServiceManager.h" />
     <ClInclude Include="ShortcutController.h" />
     <ClInclude Include="stdafx.h" />
